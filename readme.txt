@@ -26,16 +26,15 @@ All we want is some love. If you did not like this plugin or if it is buggy, ple
 In case you feel compelled to rate this plugin less than 5 stars - please do mention the reason and we will add or change options and fix bugs. It's very unpleasant to see silent low rates. For more information and instructions on this plugin please visit www.dualcube.com.
 
 == Installation ==
+1. Upload the `Woo-commerce Catalog Enquiry` folder to the `/wp-content/plugins/` directory OR search for "Woo-commerce Catalog Enquiry" from your Wordpress admin.
+2. Activate the plugin through the 'Plugins' menu in Wordpress.
+3. Configure the plugin settings through the "Woo-commerce Catalog Enquiry settings" menu on your Wordpress admin panel.
+4. Now click on the settings link and configure the plugin as per your requirement.
+
 This plug-in is created for woo-commerce, so you must have to woo-commerce is installed in your word-press website . 
 if your word-press website haven\'t woo-commerce installed then first install woo-commerce plug-in please follow the link of woo-commerce plug-in https://wordpress.org/plugins/woocommerce/. If you are new in word-press and don\'t know to how to install a word-press plug-in then follow the link https://codex.wordpress.org/Managing_Plugins. 
 You can  find how to install word-press plug-in. For this plug-in install you can also follow the same link.
 Woocommerce Catalog Enquiry maintain the standardization of woo themes. There are we are working on the slandered hooks and filter for the given functionality. 
-
-Manual installation 
-1. Upload the `Woo-commerce Catalog Enquiry` folder to the `/wp-content/plugins/` directory OR search for "Woo-commerce Catalog Enquiry" from your Wordpress admin.
-2. Activate the plugin through the 'Plugins' menu in Wordpress.
-3. Configure the plugin settings through the "Woo-commerce Catalog Enquiry settings" menu on your Wordpress admin panel.
-4. Now click on the settings link and configure the plugin as per your requirement.  
 
 == Frequently Asked Questions ==
 Q.1 Can we install this plug-in without woo-commerce?
