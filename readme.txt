@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-woocommerce catalog enquiry is a woocommerce catalog plugin. Where user can convert his woocommerce store into a catalog website in a click. 
+Woocommerce catalog enquiry is a woocommerce catalog plugin. Where user can convert his woocommerce store into a catalog website in a click. 
 
 == Description ==
 Woo-commerce Catalog Enquiry is a woo-commerce catalog plug-in. Where user can convert his woo-commerce store into a catalog website. 
