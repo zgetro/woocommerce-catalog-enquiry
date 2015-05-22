@@ -32,14 +32,14 @@ In case you feel compelled to rate this plugin less than 5 stars - please do men
 4. Now click on the settings link and configure the plugin as per your requirement.
 
 This plug-in is created for woo-commerce, so you must have to woo-commerce is installed in your word-press website . 
-if your word-press website haven\'t woo-commerce installed then first install woo-commerce plug-in please follow the link of woo-commerce plug-in https://wordpress.org/plugins/woocommerce/. If you are new in word-press and don\'t know to how to install a word-press plug-in then follow the link https://codex.wordpress.org/Managing_Plugins. 
+if your word-press website haven't woo-commerce installed then first install woo-commerce plug-in please follow the link of woo-commerce plug-in https://wordpress.org/plugins/woocommerce/. If you are new in word-press and don't know to how to install a word-press plug-in then follow the link https://codex.wordpress.org/Managing_Plugins. 
 You can  find how to install word-press plug-in. For this plug-in install you can also follow the same link.
 Woocommerce Catalog Enquiry maintain the standardization of woo themes. There are we are working on the slandered hooks and filter for the given functionality. 
 
 == Frequently Asked Questions ==
 Q.1 Can we install this plug-in without woo-commerce?
 
-Ans. No you can\'t install this plug-in without woo-commerce plug-in it\'s a woo-commerce add-on plug-in.
+Ans. No you can't install this plug-in without woo-commerce plug-in it's a woo-commerce add-on plug-in.
 
 Q.2 Can we use this plug-in for commercial use?
 
