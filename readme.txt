@@ -21,6 +21,8 @@ For this plug-in you must have the woo-commerce 2.0 or later because it is teste
 = Configurable =
 Woo-commerce Catalog Enquiry is completely customizable. Among others, you may enable/disable catalog mode, Price in catalog, You can include the enquiry form, there is also the setting for logged in user or logged out user and many more you can configure yourself.  There is also the custom button option for user if they want his own custom button with text, color, background, hover color, hover background color. There is also the configuration on the enquiry form you can choose the form field. and you can put the content at the top of form as well as bottom of form.
 
+Click to see the [Live Demo](http://demo.dualcube.com/wordpress/plugins/woocommerce-catalog-enquiry/wp-admin/ "Live Demo")
+
 = Feedback =
 All we want is some love. If you did not like this plugin or if it is buggy, please give us a shout and we will be happy to fix the issue/add the feature. If you indeed liked it, please leave a 5/5 rating.  
 In case you feel compelled to rate this plugin less than 5 stars - please do mention the reason and we will add or change options and fix bugs. It's very unpleasant to see silent low rates. For more information and instructions on this plugin please visit www.dualcube.com.
