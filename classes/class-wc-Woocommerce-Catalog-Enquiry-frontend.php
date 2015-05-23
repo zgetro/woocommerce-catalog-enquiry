@@ -340,7 +340,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 			padding: <?php if($settings['button_padding']!=""){ echo $settings['button_padding']."px";} else { echo "5px"; } ?>;
 			width: <?php if($settings['button_width']!=""){ echo $settings['button_width']."px";} else { echo "80px"; } ?>;
 			height: <?php if($settings['button_height']!=""){ echo $settings['button_height']."px";} else { echo "20px"; } ?>;
-			line-height: <?php if($settings['button_height']!=""){ echo $settings['button_height']."px";} else { echo "20px"; } ?>;
+			line-height: <?php if($settings['button_fornt_size']!=""){ echo $settings['button_fornt_size']."px";} else { echo "14px"; } ?>;
 			border-radius: <?php if($settings['button_border_redius']!=""){ echo $settings['button_border_redius']."px";} else { echo "5px"; } ?>;
 			border: <?php if($settings['button_border_size']!=""){ echo $settings['button_border_size']."px";} else { echo "1px"; } ?> solid  <?php if($settings['button_border_color']!=""){ echo $settings['button_border_color'];} else { echo "#333"; } ?>;
 			font-size: <?php if($settings['button_fornt_size']!=""){ echo $settings['button_fornt_size']."px";} else { echo "12px"; } ?>;
