@@ -19,7 +19,7 @@ class WC_Woocommerce_Catalog_Enquiry_Ajax {
 		$product_name = $_POST['woo_customer_product_name'];
 		$product_url = $_POST['woo_customer_product_url'];
 		
-		$email_admin = "prabhakar.k@dualcube.com";//get_option( 'admin_email' );
+		$email_admin = get_option( 'admin_email' );
 		$subject_mail = 'Product Enquiry';
 		$email_heading = 'Product Enquiry for '.$product_name;
 		$email_footer = "Woocommerce product enquiry";
