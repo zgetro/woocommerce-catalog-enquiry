@@ -15,9 +15,9 @@ Woocommerce Catalog Enquiry converts your Woostore into a catalog store. You can
 
 Following is a non comprehensive list of features:
 
-Enable/disable the plugin from option panel.
-Enable plugin settings for administrators.
-Enable/disable plugin functions disabling the entire plugin.
+*Enable/disable the plugin from option panel.
+*Enable plugin settings for administrators.
+*Enable/disable plugin functions disabling the entire plugin.
 
 Hide product price.
 Hide -Add to Cart- button in product detail page.
