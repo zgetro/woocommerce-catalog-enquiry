@@ -18,17 +18,14 @@ Following is a non comprehensive list of features:
 1. Enable/disable the plugin from option panel.
 2. Enable plugin settings for administrators.
 3. Enable/disable plugin functions disabling the entire plugin.
-
 4. Hide product price.
 5. Hide -Add to Cart- button in product detail page.
 6. Hide -Add to Cart- button in the other pages of the site (catalog, shop etc.).
 7. Hide price to all users or to unregistered users only.
-
 8. Add a tab/button with an inquiry form.
 9. Add a custom button in product page.
 10. Add external link for all products.
 11. Add external product link for individual products.
-
 12. Choose the group you want to apply catalog settings (registered, non registered users).
 13. Select enquiry form field from admin section.
 14. Change the link of images and title with given link.
@@ -90,9 +87,11 @@ Ans. Yes you can use this plug-in for shop and catalog at a time like you can re
 12. woocommerce catalog enquiry frontend catalog mode with enquiry form mobile view
 
 == Changelog ==
-1.0.0
-Initial version release.
+
+= 1.0.0 =
+* Initial version release.
 
 == Upgrade Notice ==
-1.0.0
-Initial version release.
+
+= 1.0.0 =
+* Initial version release.
