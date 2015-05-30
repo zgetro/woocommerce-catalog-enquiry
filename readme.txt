@@ -19,20 +19,20 @@ Following is a non comprehensive list of features:
 2. Enable plugin settings for administrators.
 3. Enable/disable plugin functions disabling the entire plugin.
 
-1. Hide product price.
-2. Hide -Add to Cart- button in product detail page.
-3. Hide -Add to Cart- button in the other pages of the site (catalog, shop etc.).
-4. Hide price to all users or to unregistered users only.
+4. Hide product price.
+5. Hide -Add to Cart- button in product detail page.
+6. Hide -Add to Cart- button in the other pages of the site (catalog, shop etc.).
+7. Hide price to all users or to unregistered users only.
 
-1. Add a tab/button with an inquiry form.
-2. Add a custom button in product page.
-3. Add external link for all products.
-4. Add external product link for individual products.
+8. Add a tab/button with an inquiry form.
+9. Add a custom button in product page.
+10. Add external link for all products.
+11. Add external product link for individual products.
 
-1. Choose the group you want to apply catalog settings (registered, non registered users).
-2. Select enquiry form field from admin section.
-3. Change the link of images and title with given link.
-4. Reponsive enquiry form, even when the website is non responsive.
+12. Choose the group you want to apply catalog settings (registered, non registered users).
+13. Select enquiry form field from admin section.
+14. Change the link of images and title with given link.
+15. Reponsive enquiry form, even when the website is non responsive.
 
 We are adding new features as you are reading. So If your required feature is currently not available in this plugin, feel free to put up a request in the support forum for this plugin or revisit the page after a few weeks. 
 
