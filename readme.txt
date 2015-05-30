@@ -8,24 +8,48 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Woocommerce catalog enquiry is a woocommerce catalog plugin. Where user can convert his woocommerce store into a catalog website in a click. 
+Woocommerce Catalog Enquiry is a catalog plugin - it allows the user to convert a woocommerce store into a catalog website in a click.
 
 == Description ==
-Woo-commerce Catalog Enquiry is a woo-commerce catalog plug-in. Where user can convert his woo-commerce store into a catalog website. 
-For this plug-in user must required woo-commerce plug-in which is worked as parent plug-in. There are various option and very flexible and easy to use.
-User just have to configure the settings panel as per the user requirement. There are various settings like catalog for guest user and shop for registered user. Or user can configure catalog for both.There are inbuilt inquiry form for product inquiry. User can hide the form or he can choose the only desired form field.  
+Woocommerce Catalog Enquiry converts your Woostore into a catalog store. You can also use this plugin to get product enquiries from users. The Woocommerce Catalog Enquiry has perhaps the most number of features and yet is a free plugin. 
 
-= Compatibility =  
-For this plug-in you must have the woo-commerce 2.0 or later because it is tested with the latest word-press and  woo-commerce installation. And your theme must be the woo-commerce standardized. I mean theme must have use the proper hooks and filter as per the standered woo-commerce theme.
+== Features ==   
+Following is a non comprehensive list of features: 
+Enable/disable the plugin from option panel
+Enable plugin settings for administrators 
+Enable/disable plugin functions disabling the entire plugin
+
+Hide product price
+Hide -Add to Cart- button in product detail page
+Hide -Add to Cart- button in the other pages of the site (catalog, shop etc.)
+Hide price to all users or to unregistered users only
+
+Add a tab/button with an inquiry form
+Add a custom button in product page
+Add external link for all products
+Add external product link for individual products
+
+
+Choose the group you want to apply catalog settings (registered, non registered users).
+Select enquiry form field from admin section.
+Change the link of images and title with given link
+Reponsive enquiry form, even when the website is non responsive.
+
+We are adding new features as you are reading. So If your required feature is currently not available in this plugin, feel free to put up a request in the support forum for this plugin or revisit the page after a few weeks. 
+
+= Compatible =  
+Woocommerce 2.0+
+Wordpress 3.8.1+
+The theme should be woocommerce standards compliant. 
 
 = Configurable =
-Woo-commerce Catalog Enquiry is completely customizable. Among others, you may enable/disable catalog mode, Price in catalog, You can include the enquiry form, there is also the setting for logged in user or logged out user and many more you can configure yourself.  There is also the custom button option for user if they want his own custom button with text, color, background, hover color, hover background color. There is also the configuration on the enquiry form you can choose the form field. and you can put the content at the top of form as well as bottom of form.
-
+This plugin is highly configurable, with options to customize almost every feature you may think of.
 Click to see the [Live Demo](http://demo.dualcube.com/wordpress/plugins/woocommerce-catalog-enquiry/wp-admin/ "Live Demo")
 
 = Feedback =
-All we want is some love. If you did not like this plugin or if it is buggy, please give us a shout and we will be happy to fix the issue/add the feature. If you indeed liked it, please leave a 5/5 rating.  
-In case you feel compelled to rate this plugin less than 5 stars - please do mention the reason and we will add or change options and fix bugs. It's very unpleasant to see silent low rates. For more information and instructions on this plugin please visit www.dualcube.com.
+All we want is love. We are extremely responsive about support requests - so if you face a problem or find any bugs, shoot us a mail or post it in the support forum, and we will respond within 24 hours(during business days). If you get the impulse to rate the plugin low because it is not working as it should, please do wait for our response because the root cause of the problem may be something else. 
+
+It is extremely disheartening when trigger happy users downrate a plugin for no fault of the plugin. 
 
 == Installation ==
 1. Upload the `Woo-commerce Catalog Enquiry` folder to the `/wp-content/plugins/` directory OR search for "Woo-commerce Catalog Enquiry" from your Wordpress admin.
