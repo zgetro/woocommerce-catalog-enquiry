@@ -13,35 +13,37 @@ Woocommerce Catalog Enquiry is a catalog plugin - it allows the user to convert 
 == Description ==
 Woocommerce Catalog Enquiry converts your Woostore into a catalog store. You can also use this plugin to get product enquiries from users. The Woocommerce Catalog Enquiry has perhaps the most number of features and yet is a free plugin. 
 
-Following is a non comprehensive list of features: 
-Enable/disable the plugin from option panel
-Enable plugin settings for administrators 
-Enable/disable plugin functions disabling the entire plugin
+Following is a non comprehensive list of features:
 
-Hide product price
-Hide -Add to Cart- button in product detail page
-Hide -Add to Cart- button in the other pages of the site (catalog, shop etc.)
-Hide price to all users or to unregistered users only
+Enable/disable the plugin from option panel.
+Enable plugin settings for administrators.
+Enable/disable plugin functions disabling the entire plugin.
 
-Add a tab/button with an inquiry form
-Add a custom button in product page
-Add external link for all products
-Add external product link for individual products
+Hide product price.
+Hide -Add to Cart- button in product detail page.
+Hide -Add to Cart- button in the other pages of the site (catalog, shop etc.).
+Hide price to all users or to unregistered users only.
+
+Add a tab/button with an inquiry form.
+Add a custom button in product page.
+Add external link for all products.
+Add external product link for individual products.
 
 Choose the group you want to apply catalog settings (registered, non registered users).
 Select enquiry form field from admin section.
-Change the link of images and title with given link
+Change the link of images and title with given link.
 Reponsive enquiry form, even when the website is non responsive.
 
 We are adding new features as you are reading. So If your required feature is currently not available in this plugin, feel free to put up a request in the support forum for this plugin or revisit the page after a few weeks. 
 
 = Compatibility =
-Woocommerce 2.0+
-Wordpress 3.8.1+
-The theme should be woocommerce standards compliant. 
+* Woocommerce 2.0+
+* Wordpress 3.8.1+
+* The theme should be woocommerce standards compliant. 
 
 = Configurable =
 This plugin is highly configurable, with options to customize almost every feature you may think of.
+
 Click to see the [Live Demo](http://demo.dualcube.com/wordpress/plugins/woocommerce-catalog-enquiry/wp-admin/ "Live Demo")
 
 = Feedback =
@@ -61,15 +63,15 @@ You can  find how to install word-press plug-in. For this plug-in install you ca
 Woocommerce Catalog Enquiry maintain the standardization of woo themes. There are we are working on the slandered hooks and filter for the given functionality. 
 
 == Frequently Asked Questions ==
-Q.1 Can we install this plug-in without woo-commerce?
+= Can we install this plug-in without woo-commerce? =
 
 Ans. No you can't install this plug-in without woo-commerce plug-in it's a woo-commerce add-on plug-in.
 
-Q.2 Can we use this plug-in for commercial use?
+= Can we use this plug-in for commercial use? =
 
 Ans. Yes you can use this plug-in for your commercial use under the http://www.gnu.org/licenses/gpl-2.0.html.
 
-Q.3 Can we use this plug-in for shop and catalog both ?
+= Can we use this plug-in for shop and catalog both ? =
 
 Ans. Yes you can use this plug-in for shop and catalog at a time like you can restrict you shop for only registered user.
    
