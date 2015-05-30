@@ -15,24 +15,24 @@ Woocommerce Catalog Enquiry converts your Woostore into a catalog store. You can
 
 Following is a non comprehensive list of features:
 
-*Enable/disable the plugin from option panel.
-*Enable plugin settings for administrators.
-*Enable/disable plugin functions disabling the entire plugin.
+1. Enable/disable the plugin from option panel.
+2. Enable plugin settings for administrators.
+3. Enable/disable plugin functions disabling the entire plugin.
 
-Hide product price.
-Hide -Add to Cart- button in product detail page.
-Hide -Add to Cart- button in the other pages of the site (catalog, shop etc.).
-Hide price to all users or to unregistered users only.
+1. Hide product price.
+2. Hide -Add to Cart- button in product detail page.
+3. Hide -Add to Cart- button in the other pages of the site (catalog, shop etc.).
+4. Hide price to all users or to unregistered users only.
 
-Add a tab/button with an inquiry form.
-Add a custom button in product page.
-Add external link for all products.
-Add external product link for individual products.
+1. Add a tab/button with an inquiry form.
+2. Add a custom button in product page.
+3. Add external link for all products.
+4. Add external product link for individual products.
 
-Choose the group you want to apply catalog settings (registered, non registered users).
-Select enquiry form field from admin section.
-Change the link of images and title with given link.
-Reponsive enquiry form, even when the website is non responsive.
+1. Choose the group you want to apply catalog settings (registered, non registered users).
+2. Select enquiry form field from admin section.
+3. Change the link of images and title with given link.
+4. Reponsive enquiry form, even when the website is non responsive.
 
 We are adding new features as you are reading. So If your required feature is currently not available in this plugin, feel free to put up a request in the support forum for this plugin or revisit the page after a few weeks. 
 
