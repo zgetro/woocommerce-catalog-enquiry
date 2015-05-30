@@ -13,7 +13,6 @@ Woocommerce Catalog Enquiry is a catalog plugin - it allows the user to convert 
 == Description ==
 Woocommerce Catalog Enquiry converts your Woostore into a catalog store. You can also use this plugin to get product enquiries from users. The Woocommerce Catalog Enquiry has perhaps the most number of features and yet is a free plugin. 
 
-== Features ==   
 Following is a non comprehensive list of features: 
 Enable/disable the plugin from option panel
 Enable plugin settings for administrators 
@@ -29,7 +28,6 @@ Add a custom button in product page
 Add external link for all products
 Add external product link for individual products
 
-
 Choose the group you want to apply catalog settings (registered, non registered users).
 Select enquiry form field from admin section.
 Change the link of images and title with given link
@@ -37,7 +35,7 @@ Reponsive enquiry form, even when the website is non responsive.
 
 We are adding new features as you are reading. So If your required feature is currently not available in this plugin, feel free to put up a request in the support forum for this plugin or revisit the page after a few weeks. 
 
-= Compatible =  
+= Compatibility =
 Woocommerce 2.0+
 Wordpress 3.8.1+
 The theme should be woocommerce standards compliant. 
