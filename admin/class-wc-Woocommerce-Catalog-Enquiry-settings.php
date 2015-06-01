@@ -24,8 +24,8 @@ class WC_Woocommerce_Catalog_Enquiry_Settings {
     global $WC_Woocommerce_Catalog_Enquiry;
     
     add_menu_page(
-        __('Woocommerce Catalog Enquiry Settings', $WC_Woocommerce_Catalog_Enquiry->text_domain), 
-        __('Woocommerce Catalog Enquiry Settings', $WC_Woocommerce_Catalog_Enquiry->text_domain), 
+        __('WC Catalog Settings', $WC_Woocommerce_Catalog_Enquiry->text_domain), 
+        __('WC Catalog Settings', $WC_Woocommerce_Catalog_Enquiry->text_domain), 
         'manage_options', 
         'wc-Woocommerce-Catalog-Enquiry-setting-admin', 
         array( $this, 'create_wc_Woocommerce_Catalog_Enquiry_settings' ),

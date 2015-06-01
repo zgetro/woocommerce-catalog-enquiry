@@ -9,4 +9,14 @@ if(!function_exists('get_Woocommerce_Catalog_Enquiry_settings')) {
     return $settings[$name];
   }
 }
+
+if(!function_exists('woocommerce_catalog_inactive_notice')) {
+  function woocommerce_catalog_inactive_notice() {
+    ?>
+    <div id="message" class="error">
+      <p><?php printf( __( '%sWooCommerce Catalog is inactive.%s The %sWooCommerce plugin%s must be active for the WooCommerce Catalog to work. Please %sinstall & activate WooCommerce%s', WC_WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN ), '<strong>', '</strong>', '<a target="_blank" href="http://wordpress.org/extend/plugins/woocommerce/">', '</a>', '<a href="' . admin_url( 'plugins.php' ) . '">', '&nbsp;&raquo;</a>' ); ?></p>
+    </div>
+		<?php
+  }
+}
 ?>

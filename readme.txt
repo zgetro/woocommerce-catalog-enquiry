@@ -4,7 +4,7 @@ Tags: woocommerce, catalog, woocommerce catalog, woocommerce catalog enquiry, wo
 Donate link: http://dualcube.com/
 Requires at least: 3.8.1
 Tested up to: 4.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,10 +89,16 @@ Ans. Yes you can use this plug-in for shop and catalog at a time like you can re
 
 == Changelog ==
 
+= 1.0.1 =
+* Minor changes to make it compatible with other major plugins.
+
 = 1.0.0 =
 * Initial version release.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+* Minor changes to make it compatible with other major plugins.
 
 = 1.0.0 =
 * Initial version release.
