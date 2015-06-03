@@ -1,4 +1,4 @@
-=== Woocommerce Catalog Enquiry ===
+=== WooCommerce Catalog Enquiry ===
 Contributors: dualcube,prabhakarkumarshaw
 Tags: woocommerce, catalog, woocommerce catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalog enquiry form, woocommerce catalog and enquiry
 Donate link: http://dualcube.com/
@@ -8,10 +8,10 @@ Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Woocommerce Catalog Enquiry is a catalog plugin - it allows the user to convert a woocommerce store into a catalog website in a click.
+WooCommerce Catalog Enquiry is a catalog plugin - it allows the user to convert a WooCommerce store into a catalog website in a click.
 
 == Description ==
-Woocommerce Catalog Enquiry converts your Woostore into a catalog store. You can also use this plugin to get product enquiries from users. The Woocommerce Catalog Enquiry has perhaps the most number of features and yet is a free plugin. 
+WooCommerce Catalog Enquiry converts your Woostore into a catalog store. You can also use this plugin to get product enquiries from users. The WooCommerce Catalog Enquiry has perhaps the most number of features and yet is a free plugin. 
 
 = Features =
 Following is a non comprehensive list of features:
@@ -35,9 +35,9 @@ Following is a non comprehensive list of features:
 We are adding new features as you are reading. So If your required feature is currently not available in this plugin, feel free to put up a request in the support forum for this plugin or revisit the page after a few weeks. 
 
 = Compatibility =
-* Woocommerce 2.0+
-* Wordpress 3.8.1+
-* The theme should be woocommerce standards compliant.
+* WooCommerce 2.0+
+* WordPress 3.8.1+
+* The theme should be WooCommerce standards compliant.
 * Multilingual Support is included with the plugin and is fully compatible with WPML.
 
 = Configurable =
@@ -51,42 +51,42 @@ All we want is love. We are extremely responsive about support requests - so if 
 It is extremely disheartening when trigger happy users downrate a plugin for no fault of the plugin. 
 
 == Installation ==
-1. Upload the `Woo-commerce Catalog Enquiry` folder to the `/wp-content/plugins/` directory OR search for "Woo-commerce Catalog Enquiry" from your Wordpress admin.
-2. Activate the plugin through the 'Plugins' menu in Wordpress.
-3. Configure the plugin settings through the "Woo-commerce Catalog Enquiry settings" menu on your Wordpress admin panel.
+1. Upload the `WooCommerce Catalog Enquiry` folder to the `/wp-content/plugins/` directory OR search for "WooCommerce Catalog Enquiry" from your WordPress admin.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Configure the plugin settings through the "WooCommerce Catalog Enquiry settings" menu on your WordPress admin panel.
 4. Now click on the settings link and configure the plugin as per your requirement.
 
-This plug-in is created for woo-commerce, so you must have to woo-commerce is installed in your word-press website . 
-if your word-press website haven't woo-commerce installed then first install woo-commerce plug-in please follow the link of woo-commerce plug-in https://wordpress.org/plugins/woocommerce/. If you are new in word-press and don't know to how to install a word-press plug-in then follow the link https://codex.wordpress.org/Managing_Plugins. 
-You can  find how to install word-press plug-in. For this plug-in install you can also follow the same link.
-Woocommerce Catalog Enquiry maintain the standardization of woo themes. There are we are working on the slandered hooks and filter for the given functionality. 
+This plugin is created for WooCommerce, so you must have to WooCommerce is installed in your WordPress website. 
+If your WordPress website haven't WooCommerce installed then first install WooCommerce plugin please follow the link of WooCommerce plugin https://wordpress.org/plugins/woocommerce/. If you are new in WordPress and don't know to how to install a WordPress plugin then follow the link https://codex.wordpress.org/Managing_Plugins. 
+You can find how to install WordPress plugin. For this plugin install you can also follow the same link.
+WooCommerce Catalog Enquiry maintain the standardization of woo themes. There are we are working on the slandered hooks and filter for the given functionality. 
 
 == Frequently Asked Questions ==
-= Can we install this plug-in without woo-commerce? =
+= Can we install this plugin without WooCommerce? =
 
-Ans. No you can't install this plug-in without woo-commerce plug-in it's a woo-commerce add-on plug-in.
+Ans. No, you can't install this plugin without WooCommerce plugin. It's a WooCommerce add-on plugin.
 
-= Can we use this plug-in for commercial use? =
+= Can we use this plugin for commercial use? =
 
-Ans. Yes you can use this plug-in for your commercial use under the http://www.gnu.org/licenses/gpl-2.0.html.
+Ans. Yes, you can use this plugin for your commercial use under the http://www.gnu.org/licenses/gpl-2.0.html.
 
-= Can we use this plug-in for shop and catalog both ? =
+= Can we use this plugin for shop and catalog both ? =
 
-Ans. Yes you can use this plug-in for shop and catalog at a time like you can restrict you shop for only registered user.
+Ans. Yes, you can use this plugin for shop and catalog at a time like you can restrict you shop for only registered user.
    
 == Screenshots ==
-1. woocommerce catalog enquiry admin settings 1
-2. woocommerce catalog enquiry admin settings 2
-3. woocommerce catalog enquiry admin settings 3
-4. woocommerce catalog enquiry admin settings 4
-5. woocommerce catalog enquiry frontend catalog mode custom button
-6. woocommerce catalog enquiry frontend shop mode
-7. woocommerce catalog enquiry frontend catalog mode without button and without price
-8. woocommerce catalog enquiry frontend catalog mode only price no button
-9. woocommerce catalog enquiry frontend catalog mode custom button with price
-10. woocommerce catalog enquiry frontend catalog mode product page
-11. woocommerce catalog enquiry frontend catalog mode with enquiry form
-12. woocommerce catalog enquiry frontend catalog mode with enquiry form mobile view
+1. WooCommerce Catalog Enquiry admin settings 1
+2. WooCommerce Catalog Enquiry admin settings 2
+3. WooCommerce Catalog Enquiry admin settings 3
+4. WooCommerce Catalog Enquiry admin settings 4
+5. WooCommerce Catalog Enquiry frontend catalog mode custom button
+6. WooCommerce Catalog Enquiry frontend shop mode
+7. WooCommerce Catalog Enquiry frontend catalog mode without button and without price
+8. WooCommerce Catalog Enquiry frontend catalog mode only price no button
+9. WooCommerce Catalog Enquiry frontend catalog mode custom button with price
+10. WooCommerce Catalog Enquiry frontend catalog mode product page
+11. WooCommerce Catalog Enquiry frontend catalog mode with enquiry form
+12. WooCommerce Catalog Enquiry frontend catalog mode with enquiry form mobile view
 
 == Changelog ==
 
