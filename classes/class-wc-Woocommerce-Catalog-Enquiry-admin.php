@@ -38,9 +38,8 @@ class WC_Woocommerce_Catalog_Enquiry_Admin {
 		if($settings['is_enable'] == "Enable") {
 			if($settings['is_custom_button'] == "Enable") {
 				if($settings['button_type'] == 3) {
-					// Add FreightCenter tab
-					add_filter( 'woocommerce_product_data_tabs', array( $this, 'catalog_product_data_tabs' ) );
-					// Output FreightCenter tab
+					
+					add_filter( 'woocommerce_product_data_tabs', array( $this, 'catalog_product_data_tabs' ) );					
 					add_action( 'woocommerce_product_data_panels', array( $this, 'catalog_product_data_panel' ) );
 					add_action( 'woocommerce_process_product_meta_simple', array( $this, 'save_catalog_data' ) );
 					add_action( 'woocommerce_process_product_meta_grouped', array( $this, 'save_catalog_data' ) );
@@ -114,13 +113,16 @@ class WC_Woocommerce_Catalog_Enquiry_Admin {
 		$screen = get_current_screen();
 		
 		// Enqueue admin script and stylesheet from here
-		if (in_array( $screen->id, array( 'toplevel_page_wc-Woocommerce-Catalog-Enquiry-setting-admin' ))) :   
+		if (in_array( $screen->id, array( 'woocommerce_page_wc-Woocommerce-Catalog-Enquiry-setting-admin' ))) :   
 		  $WC_Woocommerce_Catalog_Enquiry->library->load_qtip_lib();
 		  $WC_Woocommerce_Catalog_Enquiry->library->load_upload_lib();
 		  $WC_Woocommerce_Catalog_Enquiry->library->load_colorpicker_lib();
 		  $WC_Woocommerce_Catalog_Enquiry->library->load_datepicker_lib();
 		  wp_enqueue_script('admin_js', $WC_Woocommerce_Catalog_Enquiry->plugin_url.'assets/admin/js/admin.js', array('jquery'), $WC_Woocommerce_Catalog_Enquiry->version, true);
 		  wp_enqueue_style('admin_css',  $WC_Woocommerce_Catalog_Enquiry->plugin_url.'assets/admin/css/admin.css', array(), $WC_Woocommerce_Catalog_Enquiry->version);
+		  //wp_enqueue_script('admin_chosen_js', $WC_Woocommerce_Catalog_Enquiry->plugin_url.'assets/admin/js/chosen.js', array('jquery'), $WC_Woocommerce_Catalog_Enquiry->version, true);
+		  //wp_enqueue_style('admin_chosen_css',  $WC_Woocommerce_Catalog_Enquiry->plugin_url.'assets/admin/css/chosen.css', array(), $WC_Woocommerce_Catalog_Enquiry->version);
+		  
 	  endif;
 	}
 }

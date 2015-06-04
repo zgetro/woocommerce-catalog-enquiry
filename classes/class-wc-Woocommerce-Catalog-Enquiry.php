@@ -30,6 +30,8 @@ class WC_Woocommerce_Catalog_Enquiry {
 	public $dc_wp_fields;
 	
 	public $options;
+	
+	public $options_exclusion ;
 
 	public function __construct($file) {
 
@@ -39,7 +41,8 @@ class WC_Woocommerce_Catalog_Enquiry {
 		$this->token = WC_WOOCOMMERCE_CATALOG_ENQUIRY_PLUGIN_TOKEN;
 		$this->text_domain = WC_WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN;
 		$this->version = WC_WOOCOMMERCE_CATALOG_ENQUIRY_PLUGIN_VERSION;
-		$this->options = get_option('dc_wc_Woocommerce_Catalog_Enquiry_general_settings_name');		
+		$this->options = get_option('dc_wc_Woocommerce_Catalog_Enquiry_general_settings_name');	
+		$this->options_exclusion = get_option('dc_wc_Woocommerce_Catalog_Enquiry_exclusion_settings_name');
 		add_action('init', array(&$this, 'init'), 0);
 	}
 	

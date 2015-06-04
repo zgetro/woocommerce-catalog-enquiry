@@ -4,7 +4,7 @@ Tags: woocommerce, catalog, woocommerce catalog, woocommerce catalog enquiry, wo
 Donate link: http://dualcube.com/
 Requires at least: 3.8.1
 Tested up to: 4.2
-Stable tag: 1.0.1
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,13 @@ Following is a non comprehensive list of features:
 * Select enquiry form field from admin section.
 * Change the link of images and title with given link.
 * Reponsive enquiry form, even when the website is non responsive.
+* New Exclusions list settings introduce.
+* Admin Can Restricted the store for selected users other users will see catalog only.
+* Admin can open the sale for selected categories products others categories products will shown only catalog.
+* Admin can open the sale for selected products others products will seen as catalog.
+* Restricted stores features.
+* Enable/disable the exclusion rules in a click.
+
 
 We are adding new features as you are reading. So If your required feature is currently not available in this plugin, feel free to put up a request in the support forum for this plugin or revisit the page after a few weeks. 
 
@@ -87,8 +94,21 @@ Ans. Yes, you can use this plugin for shop and catalog at a time like you can re
 10. WooCommerce Catalog Enquiry frontend catalog mode product page
 11. WooCommerce Catalog Enquiry frontend catalog mode with enquiry form
 12. WooCommerce Catalog Enquiry frontend catalog mode with enquiry form mobile view
+13. WooCommerce Catalog Enquiry admin settings for exclusion rules
+14. WooCommerce Catalog Enquiry admin settings for exclusion for selected users
+15. WooCommerce Catalog Enquiry admin settings for exclusion for selected products
+16. WooCommerce Catalog Enquiry admin settings for exclusion for selected categories
+17. WooCommerce Catalog Enquiry frontend shop view for excluded selected products from catalog
+18. WooCommerce Catalog Enquiry frontend excluded selected categories view
+19. WooCommerce Catalog Enquiry frontend shop view for selected uses.
 
 == Changelog ==
+
+= 2.0.0 =
+* Settings menu moved under the WooCommerce section.
+* Restricted store features added in this version.
+* New exclusion settings panel introduce in this version.
+* Cart and catalog both working at a same time as per the admin configuration 
 
 = 1.0.1 =
 * Minor changes to make it compatible with other major plugins.
@@ -97,6 +117,12 @@ Ans. Yes, you can use this plugin for shop and catalog at a time like you can re
 * Initial version release.
 
 == Upgrade Notice ==
+
+= 2.0.0 =
+* Settings menu moved under the WooCommerce section.
+* Restricted store features added in this version.
+* New exclusion settings panel introduce in this version.
+* Cart and catalog both working at a same time as per the admin configuration 
 
 = 1.0.1 =
 * Minor changes to make it compatible with other major plugins.

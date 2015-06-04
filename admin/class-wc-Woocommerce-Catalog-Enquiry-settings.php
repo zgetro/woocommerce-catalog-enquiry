@@ -15,30 +15,24 @@ class WC_Woocommerce_Catalog_Enquiry_Settings {
     
     // Settings tabs
     add_action('settings_page_wc_Woocommerce_Catalog_Enquiry_general_tab_init', array(&$this, 'general_tab_init'), 10, 1);
+    add_action('settings_page_wc_Woocommerce_Catalog_Enquiry_exclusion_tab_init', array(&$this, 'exclusion_tab_init'), 10, 1);
+    
   }
   
   /**
    * Add options page
    */
   public function add_settings_page() {
-    global $WC_Woocommerce_Catalog_Enquiry;
-    
-    add_menu_page(
-        __('WC Catalog Settings', $WC_Woocommerce_Catalog_Enquiry->text_domain), 
-        __('WC Catalog Settings', $WC_Woocommerce_Catalog_Enquiry->text_domain), 
-        'manage_options', 
-        'wc-Woocommerce-Catalog-Enquiry-setting-admin', 
-        array( $this, 'create_wc_Woocommerce_Catalog_Enquiry_settings' ),
-        $WC_Woocommerce_Catalog_Enquiry->plugin_url . 'assets/images/dualcube.png'
-    );
-    
+    global $WC_Woocommerce_Catalog_Enquiry;    
+    add_submenu_page( 'woocommerce', __('Woocommerce Catalog Enquiry Settings',$WC_Woocommerce_Catalog_Enquiry->text_domain), __('WC Catalog Enquiry',$WC_Woocommerce_Catalog_Enquiry->text_domain), 'manage_options', 'wc-Woocommerce-Catalog-Enquiry-setting-admin', array( $this, 'create_wc_Woocommerce_Catalog_Enquiry_settings' ) ); 
     $this->tabs = $this->get_dc_settings_tabs();
   }
   
   function get_dc_settings_tabs() {
     global $WC_Woocommerce_Catalog_Enquiry;
     $tabs = apply_filters('wc_Woocommerce_Catalog_Enquiry_tabs', array(
-      'wc_Woocommerce_Catalog_Enquiry_general' => __('Woocommerce Catalog Enquiry General', $WC_Woocommerce_Catalog_Enquiry->text_domain)
+      'wc_Woocommerce_Catalog_Enquiry_general' => __('Woocommerce Catalog Enquiry General', $WC_Woocommerce_Catalog_Enquiry->text_domain),
+      'wc_Woocommerce_Catalog_Enquiry_exclusion' => __('Woocommerce Catalog Enquiry Exclusion Settings', $WC_Woocommerce_Catalog_Enquiry->text_domain)
        
     ));
     return $tabs;
@@ -79,9 +73,13 @@ class WC_Woocommerce_Catalog_Enquiry_Settings {
     global $WC_Woocommerce_Catalog_Enquiry;
     ?>
     <div class="wrap">
+    
       <?php $this->dc_settings_tabs(); ?>
       <?php
       $tab = ( isset( $_GET['tab'] ) ? $_GET['tab'] : 'wc_Woocommerce_Catalog_Enquiry_general' );
+      
+      
+      
       $this->options = get_option( "dc_{$tab}_settings_name" );
       //print_r($this->options);
       
@@ -166,6 +164,13 @@ class WC_Woocommerce_Catalog_Enquiry_Settings {
     global $WC_Woocommerce_Catalog_Enquiry;
     $WC_Woocommerce_Catalog_Enquiry->admin->load_class("settings-{$tab}", $WC_Woocommerce_Catalog_Enquiry->plugin_path, $WC_Woocommerce_Catalog_Enquiry->token);
     new WC_Woocommerce_Catalog_Enquiry_Settings_Gneral($tab);
+  }
+  
+  
+  function exclusion_tab_init($tab) {
+    global $WC_Woocommerce_Catalog_Enquiry;    
+    $WC_Woocommerce_Catalog_Enquiry->admin->load_class("settings-{$tab}", $WC_Woocommerce_Catalog_Enquiry->plugin_path, $WC_Woocommerce_Catalog_Enquiry->token);
+    new WC_Woocommerce_Catalog_Enquiry_Settings_Exclusion($tab);
   }
   
   function get_field_callback_type($fieldType) {
@@ -318,8 +323,8 @@ class WC_Woocommerce_Catalog_Enquiry_Settings {
    */
   public function multiselect_callback($field) {
   	global $WC_Woocommerce_Catalog_Enquiry;
-  	$field['value'] = isset( $field['value'] ) ? esc_textarea( $field['value'] ) : '';
-    $field['value'] = isset( $this->options[$field['name']] ) ? esc_textarea( $this->options[$field['name']] ) : $field['value'];
+  	$field['value'] = isset( $field['value'] ) ? $field['value'] : array();
+    $field['value'] = isset( $this->options[$field['name']] ) ? $this->options[$field['name']] : $field['value'];
     $field['name'] = "dc_{$field['tab']}_settings_name[{$field['name']}]";
     $WC_Woocommerce_Catalog_Enquiry->dc_wp_fields->multiselect_input($field);  	
   }

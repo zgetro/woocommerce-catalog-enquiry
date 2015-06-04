@@ -34,9 +34,9 @@ class WC_Woocommerce_Catalog_Enquiry_Library {
 	 */
 	public function load_wp_fields() {
 	  global $WC_Woocommerce_Catalog_Enquiry;
-	  if ( ! class_exists( 'DC_WP_Fields' ) )
+	  if ( ! class_exists( 'DC_WP_Fields_Catalog' ) )
 	    require_once ($this->php_lib_path . 'class-dc-wp-fields.php');
-	  $DC_WP_Fields = new DC_WP_Fields(); 
+	  $DC_WP_Fields = new DC_WP_Fields_Catalog(); 
 	  return $DC_WP_Fields;
 	}
 	

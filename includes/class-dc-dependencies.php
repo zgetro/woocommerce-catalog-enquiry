@@ -3,7 +3,7 @@
  * WC Dependency Checker
  *
  */
-class WC_Catalog_Dependencies {
+class WC_Dependencies_woocommerce_catalog_enquiry {
 	private static $active_plugins;
 	static function init() {
 		self::$active_plugins = (array) get_option( 'active_plugins', array() );

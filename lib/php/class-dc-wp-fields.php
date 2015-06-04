@@ -9,7 +9,7 @@
  * @package 	lib/php
  * @version     1.0.2
  */
-class DC_WP_Fields {
+class DC_WP_Fields_Catalog {
   
   /**
    * Start up
@@ -276,7 +276,7 @@ class DC_WP_Fields {
    */
   public function multiselect_input($field) {
     $field['class'] 		= isset( $field['class'] ) ? $field['class'] : 'select short';
-    $field['value'] 		= isset( $field['value'] ) ? $field['value'] : '';
+    $field['value'] 		= isset( $field['value'] ) ? $field['value'] : array();
     $field['name'] 			= isset( $field['name'] ) ? $field['name'] : $field['id'];
     
     // Custom attribute handling
@@ -289,15 +289,17 @@ class DC_WP_Fields {
     $options = '';
     
     foreach ( $field['options'] as $key => $value ) {
-      $options .= '<option value="' . esc_attr( $key ) . '" ' . selected( esc_attr( $field['value'] ), esc_attr( $key ), false ) . '>' . esc_html( $this->string_wpml($value) ) . '</option>';
+      $options .= '<option value="' . esc_attr( $key ) . '" ';
+      if(in_array( esc_attr( $key ), $field['value'] )) $options .= 'selected'; 
+      $options .= '>' . esc_html( $this->string_wpml($value) ) . '</option>';
     }
     
     $field = $this->field_wrapper_start($field);
     
     printf(
-        '<select multiple id="%s" style="%s" name="%s" class="%s" %s />%s</select>',
+        '<select multiple id="%s" style="width:25em; min-height:120px;" name="%s[]" class="%s" %s />%s</select>',
         esc_attr($field['id']),
-        esc_attr($field['style']),
+       
         esc_attr($field['name']),
         esc_attr($field['class']),
         implode( ' ', $custom_attributes ),
