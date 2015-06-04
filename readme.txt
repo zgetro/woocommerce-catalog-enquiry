@@ -1,6 +1,6 @@
 === WooCommerce Catalog Enquiry ===
 Contributors: dualcube,prabhakarkumarshaw
-Tags: woocommerce, catalog, woocommerce catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalog enquiry form, woocommerce catalog and enquiry
+Tags: woocommerce, catalog, woocommerce catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalog enquiry form, woocommerce catalog and enquiry, woocommerce restricted shop, restricted shop, woocommerce shop by user, woocommerce shop by categories, woocommerce shop by products, woocommerce shop for selected users, woocommerce shop for selected categories, woocommerce shop for selected products
 Donate link: http://dualcube.com/
 Requires at least: 3.8.1
 Tested up to: 4.2
