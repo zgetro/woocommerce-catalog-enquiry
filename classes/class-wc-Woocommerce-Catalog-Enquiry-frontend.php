@@ -49,9 +49,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 			}			
 		}
 		
-		$count1 = 0;
-		$count2 = 0;
-		$count3 = 0;
+		
 		
 		if(isset($settings['is_enable']) && $settings['is_enable'] == "Enable") {						
 			if(isset($settings['is_custom_button']) && $settings['is_custom_button'] == "Enable") {	
@@ -150,14 +148,14 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 		$exclusion = $WC_Woocommerce_Catalog_Enquiry->options_exclusion;
 		
 		
-		if($settings['is_enable'] == "Enable" && $this->available_for == '' ) {			
+		if($settings['is_enable'] == "Enable" && ($this->available_for == '' ||  $this->available_for == 0)) {			
 			add_action('init',array($this,'remove_add_to_cart_button'));
 			if($settings['is_enable_enquiry'] == "Enable" ) {
 					add_action('woocommerce_single_product_summary', array($this,'add_form_for_enquiry'),100);				
 			}						
 			if($settings['is_remove_price'] == "Enable") {
 				add_action('init',array($this,'remove_price_from_product_list_loop'),10);
-				add_action('woocommerce_single_product_summary',array($this,'remove_price_from_product_list_single'),10);				
+				add_action('woocommerce_single_product_summary',array($this,'remove_price_from_product_list_single'),5);				
 			}
 			if(isset($settings['is_custom_button']) && $settings['is_custom_button'] == "Enable") {
 				if($settings['button_type'] == 0 || $settings['button_type'] == '' || $settings['button_type'] == 1) {
@@ -177,7 +175,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 			add_action('woocommerce_after_shop_loop_item_title' , array ($this, 'price_for_selected_product'),5);
 			add_action('woocommerce_after_shop_loop_item' , array ($this, 'add_to_cart_button_for_selected_product'),5);
 			add_action('woocommerce_before_shop_loop_item', array ($this, 'change_permalink_url_for_selected_product'),5);
-			add_action( 'woocommerce_single_product_summary', array($this, 'catalog_woocommerce_template_single'), 40 );
+			add_action( 'woocommerce_single_product_summary', array($this, 'catalog_woocommerce_template_single'), 5 );
 			
 		}		
 	}
