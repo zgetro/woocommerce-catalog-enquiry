@@ -1,10 +1,11 @@
 === WooCommerce Catalog Enquiry ===
 Contributors: dualcube,prabhakarkumarshaw
-Tags: woocommerce, catalog, woocommerce catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalog enquiry form, woocommerce catalog and enquiry, woocommerce restricted shop, restricted shop, woocommerce shop by user, woocommerce shop by categories, woocommerce shop by products, woocommerce shop for selected users, woocommerce shop for selected categories, woocommerce shop for selected products
+Tags: woocommerce, catalog, woocommerce catalog, woocommerce catalog enquiry, woocommerce product enquiry, woocommerce enquiry form, woocommerce catalog enquiry form, woocommerce catalog and enquiry, woocommerce restricted shop, restricted shop, woocommerce shop by user, woocommerce shop by categories, woocommerce shop by products, woocommerce shop for selected users, woocommerce shop for selected categories, woocommerce shop for selected products, remove add to cart, remove price, catalog, catalog mode, woocommerce remove add to cart button, woocommerce catalogue mode 
+
 Donate link: http://dualcube.com/
 Requires at least: 3.8.1
 Tested up to: 4.2
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,6 +105,9 @@ Ans. Yes, you can use this plugin for shop and catalog at a time like you can re
 
 == Changelog ==
 
+= 2.0.2 =
+* Minor changes to support latest WooCommerce 2.3.10
+
 = 2.0.1 =
 * Price display in single page issue fixed.
 
@@ -120,6 +124,9 @@ Ans. Yes, you can use this plugin for shop and catalog at a time like you can re
 * Initial version release.
 
 == Upgrade Notice ==
+
+= 2.0.2 =
+* Minor changes to support latest WooCommerce 2.3.10
 
 = 2.0.1 =
 * Price display in single page issue fixed.
