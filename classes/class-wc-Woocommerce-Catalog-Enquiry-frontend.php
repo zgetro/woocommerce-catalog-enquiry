@@ -451,7 +451,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 			<div class="modal-body">
 				<div class="row-fluid">
 					<div class="span12">
-						<h5><?php if( isset($settings['top_content_form'])) { echo $settings['top_content_form']; }?></h5>
+						<p><?php if( isset($settings['top_content_form'])) { echo $settings['top_content_form']; }?></p>
 						<p id="msg_for_enquiry_error" style="color:#f00; text-align:center;"></p>
 						<p id="msg_for_enquiry_sucesss" style="color:#0f0; text-align:center;"></p>
 						<p id="loader_after_sumitting_the_form" style="text-align:center;"><img src="<?php echo $WC_Woocommerce_Catalog_Enquiry->plugin_url;?>assets/images/loader.gif" ></p>
@@ -485,7 +485,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 						<p><?php echo __('Enter the security code shown above',$WC_Woocommerce_Catalog_Enquiry->text_domain); ?> </p>
 						<p><input type="text" id="woo_catalog_captcha" name="woo_captcha" class="span12" /></p>
 						
-						<h5><?php if(isset($settings['bottom_content_form'])) { echo $settings['bottom_content_form']; } ?></h5>
+						<p><?php if(isset($settings['bottom_content_form'])) { echo $settings['bottom_content_form']; } ?></p>
 				</div>
 			
 		</div>
