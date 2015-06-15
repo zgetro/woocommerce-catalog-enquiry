@@ -464,7 +464,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 						
 						<?php if( isset($settings['is_subject']) && $settings['is_subject']=="Enable") { ?>
 						<p><?php echo __('Enter enquiry subject : ',$WC_Woocommerce_Catalog_Enquiry->text_domain); ?></p>	
-						<p><input name="woo_user_subject" id="woo_user_subject"  type="text" value="Product enquiry" class="span12" /></p>
+						<p><input name="woo_user_subject" id="woo_user_subject"  type="text" value="<?php echo __('Enquiry about',$WC_Woocommerce_Catalog_Enquiry->text_domain); ?> <?php echo $product_name; ?>" class="span12" /></p>
 						<?php } ?>
 						<?php if( isset($settings['is_phone']) && $settings['is_phone']=="Enable") { ?>
 						<p><?php echo __('Enter your phone no : ',$WC_Woocommerce_Catalog_Enquiry->text_domain); ?></p>	

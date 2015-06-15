@@ -112,10 +112,10 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Gneral {
     } 
     
     if( isset( $input['top_content_form'] ) )
-      $new_input['top_content_form'] = sanitize_text_field( $input['top_content_form'] );
+      $new_input['top_content_form'] =  $input['top_content_form'];
 
     if( isset( $input['bottom_content_form'] ) )
-      $new_input['bottom_content_form'] = sanitize_text_field( $input['bottom_content_form'] );
+      $new_input['bottom_content_form'] = $input['bottom_content_form'];
     
     if( isset( $input['is_enable_enquiry'] ) )
       $new_input['is_enable_enquiry'] = sanitize_text_field( $input['is_enable_enquiry'] );
