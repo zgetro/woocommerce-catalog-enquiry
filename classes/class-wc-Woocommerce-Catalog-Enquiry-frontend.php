@@ -266,6 +266,51 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 	public function add_form_for_enquiry() {		
 		global $WC_Woocommerce_Catalog_Enquiry, $woocommerce, $post;
 		$settings = $WC_Woocommerce_Catalog_Enquiry->options;
+		$settings_buttons = $WC_Woocommerce_Catalog_Enquiry->option_button;
+		if(isset($settings_buttons)) {
+			
+			$custom_design_for_button = isset($settings_buttons['is_button']) ?	$settings_buttons['is_button'] : '';
+			$background_color = isset($settings_buttons['button_background_color']) ? $settings_buttons['button_background_color'] : '#ccc';
+			$button_text = isset($settings_buttons['button_text']) ? $settings_buttons['button_text'] : __('Send an enquiry',$WC_Woocommerce_Catalog_Enquiry->text_domain);
+			$button_text_color = isset($settings_buttons['button_text_color']) ? $settings_buttons['button_text_color'] : '#fff';
+			$button_text_color_hover = isset($settings_buttons['button_text_color_hover']) ? $settings_buttons['button_text_color_hover'] : '#ccc';
+			$button_background_color_hover = isset($settings_buttons['button_background_color_hover']) ? $settings_buttons['button_background_color_hover'] : '#eee';
+			$button_width = isset($settings_buttons['button_width']) ? $settings_buttons['button_width'].'px' : '200px';
+			$button_height = isset($settings_buttons['button_height']) ? $settings_buttons['button_height'].'px' : '50px';
+			$button_padding = isset($settings_buttons['button_padding']) ? $settings_buttons['button_padding'].'px' : '10px';
+			$button_border_size = isset($settings_buttons['button_border_size']) ? $settings_buttons['button_border_size'].'px' : '1px';
+			$button_fornt_size = isset($settings_buttons['button_fornt_size']) ? $settings_buttons['button_fornt_size'].'px' : '18px';
+			$button_border_redius = isset($settings_buttons['button_border_redius']) ? $settings_buttons['button_border_redius'].'px' : '5px';
+			$button_border_color = isset($settings_buttons['button_border_color']) ? $settings_buttons['button_border_color'] : '#999';
+			$button_margin_top = isset($settings_buttons['button_margin_top']) ? $settings_buttons['button_margin_top'].'px' : '0px';
+			$button_margin_bottom = isset($settings_buttons['button_margin_bottom']) ? $settings_buttons['button_margin_bottom'].'px' : '0px';
+			if($button_text == '') {
+				$button_text = __('Send an enquiry',$WC_Woocommerce_Catalog_Enquiry->text_domain);
+			}
+			?>
+			<style type="text/css" >
+			.woo_catalog_enquiry_custom_button_enquiry {
+				background: <?php echo $background_color; ?>;
+				color: <?php echo $button_text_color; ?>;
+				padding: <?php echo $button_padding;  ?>;
+				width: <?php echo $button_width; ?>;
+				height: <?php echo $button_height; ?>;
+				line-height: <?php echo $button_fornt_size; ?>;
+				border-radius: <?php echo $button_border_redius; ?>;
+				border: <?php echo $button_border_size.' solid '.$button_border_color; ?>;
+				font-size: <?php echo $button_fornt_size; ?>;
+				margin-top : <?php echo $button_margin_top; ?>;
+				margin-bottom : <?php echo $button_margin_bottom; ?>;
+			
+			}
+			.woo_catalog_enquiry_custom_button_enquiry:hover {
+				background: <?php echo $button_text_color_hover;   ?>;
+				color: <?php echo $button_background_color_hover;   ?>;
+			}		
+		</style>
+			
+			<?php
+		}
 		$arr_field = array();
 		$arr_field[] = "name";
 		$arr_field[] = "email";
@@ -327,8 +372,14 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 			</style>
 			
 		<?php }?>
-		
-		<button class="demo btn btn-primary btn-large" style="margin-top:15px;" data-toggle="modal" href="#responsive"><?php echo __('Send an enquiry',$WC_Woocommerce_Catalog_Enquiry->text_domain)?></button>
+		<?php if(isset($custom_design_for_button) && $custom_design_for_button == "Enable" ) {?>
+			<br/>
+			<button class="woo_catalog_enquiry_custom_button_enquiry"  onclick="do_toggle();" data-toggle="modal" href="#responsive"><?php echo $button_text;?></button>
+			<?php
+		}
+		else {?>
+		<button class="demo btn btn-primary btn-large" style="margin-top:15px;" onclick="do_toggle();" data-toggle="modal" href="#responsive"><?php echo __('Send an enquiry',$WC_Woocommerce_Catalog_Enquiry->text_domain)?></button>
+		<?php }?>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<link href="<?php echo $WC_Woocommerce_Catalog_Enquiry->plugin_url;?>assets/frontend/css/bootstrap.css" rel="stylesheet" />
 		<link href="http://getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
@@ -438,7 +489,12 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 						 jQuery('#msg_for_enquiry_error').html('error in system please try later');									 
 					 }					
 				});						
-			}		
+			}
+			function do_toggle() {
+				jQuery(document).ready(function($){
+				  $("#responsive").removeClass('hide');						
+				});				
+			}
 		</script>
 		
 		<input type="hidden" name="product_name_for_enquiry" id="product_name_for_enquiry" value="<?php echo get_post_field('post_title',$post->ID); ?>" />
@@ -446,7 +502,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 		<div id="responsive"  class="modal hide fade" tabindex="-1" data-width="760">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			<h1 style="font-size:20px;"><?php echo __('Enquiry about ',$WC_Woocommerce_Catalog_Enquiry->text_domain)?> <?php echo $product_name; ?></h1>
+			<h2 style="font-size:20px;"><?php echo __('Enquiry about ',$WC_Woocommerce_Catalog_Enquiry->text_domain)?> <?php echo $product_name; ?></h2>
 		</div>
 			<div class="modal-body">
 				<div class="row-fluid">
@@ -492,8 +548,8 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 		</div>
 		<div class="modal-footer">
 			
-			<button type="button" data-dismiss="modal" class="btn">Close</button>
-			<button onclick="submitthis('frm_woo_catalog');" type="button" id="woo_submit_enquiry" class="btn btn-primary">Send</button>
+			<button type="button" data-dismiss="modal" class="btn"><?php echo __('Close',$WC_Woocommerce_Catalog_Enquiry->text_domain);?></button>
+			<button onclick="submitthis('frm_woo_catalog');" type="button" id="woo_submit_enquiry" class="btn btn-primary"><?php echo __('Send', $WC_Woocommerce_Catalog_Enquiry->text_domain);?></button>
 		</div>
 	</div>		
 		

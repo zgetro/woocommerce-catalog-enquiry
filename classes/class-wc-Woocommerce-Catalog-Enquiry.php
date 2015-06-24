@@ -32,6 +32,8 @@ class WC_Woocommerce_Catalog_Enquiry {
 	public $options;
 	
 	public $options_exclusion ;
+	
+	public $option_button;
 
 	public function __construct($file) {
 
@@ -43,6 +45,7 @@ class WC_Woocommerce_Catalog_Enquiry {
 		$this->version = WC_WOOCOMMERCE_CATALOG_ENQUIRY_PLUGIN_VERSION;
 		$this->options = get_option('dc_wc_Woocommerce_Catalog_Enquiry_general_settings_name');	
 		$this->options_exclusion = get_option('dc_wc_Woocommerce_Catalog_Enquiry_exclusion_settings_name');
+		$this->option_button = get_option('dc_wc_Woocommerce_Catalog_Enquiry_button_settings_name');
 		add_action('init', array(&$this, 'init'), 0);
 	}
 	

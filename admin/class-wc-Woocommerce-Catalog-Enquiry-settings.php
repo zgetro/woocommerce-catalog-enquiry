@@ -16,6 +16,7 @@ class WC_Woocommerce_Catalog_Enquiry_Settings {
     // Settings tabs
     add_action('settings_page_wc_Woocommerce_Catalog_Enquiry_general_tab_init', array(&$this, 'general_tab_init'), 10, 1);
     add_action('settings_page_wc_Woocommerce_Catalog_Enquiry_exclusion_tab_init', array(&$this, 'exclusion_tab_init'), 10, 1);
+    add_action('settings_page_wc_Woocommerce_Catalog_Enquiry_button_tab_init', array(&$this, 'button_tab_init'), 10, 1);
     
   }
   
@@ -32,7 +33,8 @@ class WC_Woocommerce_Catalog_Enquiry_Settings {
     global $WC_Woocommerce_Catalog_Enquiry;
     $tabs = apply_filters('wc_Woocommerce_Catalog_Enquiry_tabs', array(
       'wc_Woocommerce_Catalog_Enquiry_general' => __('Woocommerce Catalog Enquiry General', $WC_Woocommerce_Catalog_Enquiry->text_domain),
-      'wc_Woocommerce_Catalog_Enquiry_exclusion' => __('Woocommerce Catalog Enquiry Exclusion Settings', $WC_Woocommerce_Catalog_Enquiry->text_domain)
+      'wc_Woocommerce_Catalog_Enquiry_exclusion' => __('Woocommerce Catalog Enquiry Exclusion Settings', $WC_Woocommerce_Catalog_Enquiry->text_domain),
+      'wc_Woocommerce_Catalog_Enquiry_button' => __('Woocommerce Catalog Enquiry Button Settings', $WC_Woocommerce_Catalog_Enquiry->text_domain)
        
     ));
     return $tabs;
@@ -164,13 +166,16 @@ class WC_Woocommerce_Catalog_Enquiry_Settings {
     global $WC_Woocommerce_Catalog_Enquiry;
     $WC_Woocommerce_Catalog_Enquiry->admin->load_class("settings-{$tab}", $WC_Woocommerce_Catalog_Enquiry->plugin_path, $WC_Woocommerce_Catalog_Enquiry->token);
     new WC_Woocommerce_Catalog_Enquiry_Settings_Gneral($tab);
-  }
-  
-  
+  }  
   function exclusion_tab_init($tab) {
     global $WC_Woocommerce_Catalog_Enquiry;    
     $WC_Woocommerce_Catalog_Enquiry->admin->load_class("settings-{$tab}", $WC_Woocommerce_Catalog_Enquiry->plugin_path, $WC_Woocommerce_Catalog_Enquiry->token);
     new WC_Woocommerce_Catalog_Enquiry_Settings_Exclusion($tab);
+  }  
+  function button_tab_init($tab) {
+    global $WC_Woocommerce_Catalog_Enquiry;    
+    $WC_Woocommerce_Catalog_Enquiry->admin->load_class("settings-{$tab}", $WC_Woocommerce_Catalog_Enquiry->plugin_path, $WC_Woocommerce_Catalog_Enquiry->token);
+    new WC_Woocommerce_Catalog_Enquiry_Settings_Button($tab);
   }
   
   function get_field_callback_type($fieldType) {

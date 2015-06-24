@@ -79,7 +79,8 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Gneral {
                                                       																														"is_subject" => array('title' => __('Subject Field Enable ?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_subject', 'label_for' => 'is_subject', 'name' => 'is_subject', 'desc' => __('Do you want Subject field in for enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this if you want subject field in the enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'),
                                                       																														"is_phone" => array('title' => __('Phone Field Enable ?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_phone', 'label_for' => 'is_phone', 'name' => 'is_phone', 'desc' => __('Do you want Phone field in for enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this if you want to Phone field in the enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'),
                                                       																														"is_address" => array('title' => __('Address Field Enable ?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_address', 'label_for' => 'is_address', 'name' => 'is_address', 'desc' => __('Do you want Address field in for enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this if you want address field in the enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'),
-                                                      																														"is_comment" => array('title' => __('Comment Field Enable ?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_comment', 'label_for' => 'is_comment', 'name' => 'is_comment', 'desc' => __('Do you want Comment field in for enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this if you want comment field in the enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable')
+                                                      																														"is_comment" => array('title' => __('Comment Field Enable ?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_comment', 'label_for' => 'is_comment', 'name' => 'is_comment', 'desc' => __('Do you want Comment field in for enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this if you want comment field in the enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'),
+                                                      																														"other_emails" => array('title' => __('Other Emails (commma seperated)', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'text', 'id' => 'other_emails', 'label_for' => 'other_emails', 'name' => 'other_emails', 'desc' => __('Enter email address if you want to receive enquiry mail along with admin mail.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('if you add more than one email then you have to put comma seperated email id no space please.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => '')
                                                       																														
                                                       																						
                                                       																					))
@@ -109,7 +110,11 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Gneral {
     
     if( isset( $input['for_user_type'] ) ) {
       $new_input['for_user_type'] = sanitize_text_field( $input['for_user_type'] );
-    } 
+    }
+    
+     if( isset( $input['other_emails'] ) ) {
+      $new_input['other_emails'] = sanitize_text_field( $input['other_emails'] );
+    }
     
     if( isset( $input['top_content_form'] ) )
       $new_input['top_content_form'] =  $input['top_content_form'];
