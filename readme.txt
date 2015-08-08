@@ -5,7 +5,7 @@ Tags: woocommerce, catalog, woocommerce catalog, woocommerce catalog enquiry, wo
 Donate link: http://dualcube.com/
 Requires at least: 3.8.1
 Tested up to: 4.2
-Stable tag: 2.1.0
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -103,8 +103,14 @@ Ans. Yes, you can use this plugin for shop and catalog at a time like you can re
 17. WooCommerce Catalog Enquiry frontend shop view for excluded selected products from catalog
 18. WooCommerce Catalog Enquiry frontend excluded selected categories view
 19. WooCommerce Catalog Enquiry frontend shop view for selected uses.
+20. WooCommerce Catalog Enquiry frontend product details page view for variation product.
+21. WooCommerce Catalog Enquiry frontend product details page view for variation product for mobile.
 
 == Changelog ==
+= 2.2.0 =
+* Fix - Some notice message is fixed in this version.
+* Feature - "Variation product" support added in this version.
+
 = 2.1.0 =
 * Multiple admin email address can be added for getting enquiry mail
 * Settings panel is added to customize catelog enquiry button
@@ -131,6 +137,10 @@ Ans. Yes, you can use this plugin for shop and catalog at a time like you can re
 * Initial version release.
 
 == Upgrade Notice ==
+= 2.2.0 =
+* Fix - Some notice message is fixed in this version.
+* Feature - "Variation product" support added in this version.
+
 = 2.1.0 =
 * Multiple admin email address can be added for getting enquiry mail
 * Settings panel is added to customize catelog enquiry button

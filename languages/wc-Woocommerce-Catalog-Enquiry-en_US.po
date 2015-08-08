@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce Catalog Enquiry\n"
-"POT-Creation-Date: 2015-06-24 19:16+0530\n"
-"PO-Revision-Date: 2015-06-24 19:16+0530\n"
+"POT-Creation-Date: 2015-08-07 18:36+0530\n"
+"PO-Revision-Date: 2015-08-07 18:36+0530\n"
 "Last-Translator: Dualcube <admin@dualcube.com>\n"
 "Language-Team: Dualcube <admin@dualcube.com>\n"
 "Language: en_US\n"
@@ -14,65 +14,77 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: woocommerce-catalog-enquiry\n"
 
-#: woocommerce-catalog-enquiry/Woocommerce_Catalog_Enquiry.php:27
+#: woocommerce-catalog-enquiry/Woocommerce_Catalog_Enquiry.php:29
 msgid "Settings"
 msgstr ""
 
-#: woocommerce-catalog-enquiry/Woocommerce_Catalog_Enquiry.php:28
+#: woocommerce-catalog-enquiry/Woocommerce_Catalog_Enquiry.php:30
 msgid "Support"
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:75
-msgid "Dear Admin"
-msgstr ""
-
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:76
-msgid "Please find the product enquiry, details are given below"
-msgstr ""
-
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:77
-msgid "Product Name :"
-msgstr ""
-
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:78
-msgid "Find the product Link"
-msgstr ""
-
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:79
-msgid "User Name : "
-msgstr ""
-
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:80
-msgid "User Email : "
-msgstr ""
-
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:88
-msgid "User Phone : "
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:90
+msgid "Product Enquiry"
 msgstr ""
 
 #: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:91
+msgid "Product Enquiry for "
+msgstr ""
+
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:92
+msgid "Woocommerce product enquiry"
+msgstr ""
+
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:129
+msgid "Dear Admin"
+msgstr ""
+
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:130
+msgid "Please find the product enquiry, details are given below"
+msgstr ""
+
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:131
+msgid "Product Name :"
+msgstr ""
+
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:133
+msgid "Find the product Link"
+msgstr ""
+
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:134
+msgid "User Name : "
+msgstr ""
+
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:135
+msgid "User Email : "
+msgstr ""
+
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:142
+msgid "User Phone : "
+msgstr ""
+
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:145
 msgid "User Address : "
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:94
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:148
 msgid "User Comments : "
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:101
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:154
 msgid "Product Name : "
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:102
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:155
 msgid "Product Url : "
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:127
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-ajax.php:176
 msgid "Thanks for using this plugin."
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:274
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:288
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:381
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:275
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:289
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:379
 msgid "Send an enquiry"
 msgstr ""
 
@@ -92,55 +104,55 @@ msgstr ""
 msgid "Please enter the valid seurity code"
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:463
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:466
 msgid "Enquiry sent successfully"
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:505
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:510
 msgid "Enquiry about "
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:515
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:520
 msgid "Enter your name : "
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:518
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:523
 msgid "Enter your Email Id : "
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:522
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:527
 msgid "Enter enquiry subject : "
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:523
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:528
 msgid "Enquiry about"
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:526
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:531
 msgid "Enter your phone no : "
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:530
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:535
 msgid "Enter your address : "
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:534
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:539
 msgid "Enter your Message : "
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:540
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:545
 msgid "Security Code"
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:541
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:546
 msgid "Enter the security code shown above"
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:551
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:556
 msgid "Close"
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:552
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-frontend.php:557
 msgid "Send"
 msgstr ""
 
@@ -152,15 +164,15 @@ msgstr ""
 msgid "Dualcube"
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:56
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:55
 msgid "Catalog Enquiry"
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:97
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:96
 msgid "Enter product external link"
 msgstr ""
 
-#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:98
+#: woocommerce-catalog-enquiry/classes/class-wc-Woocommerce-Catalog-Enquiry-admin.php:97
 msgid "https://www.google.com"
 msgstr ""
 
@@ -664,6 +676,14 @@ msgstr ""
 
 #: woocommerce-catalog-enquiry/admin/class-wc-Woocommerce-Catalog-Enquiry-settings-wc_Woocommerce_Catalog_Enquiry_general.php:273
 msgid "Configure your enquiry form settings below"
+msgstr ""
+
+#: woocommerce-catalog-enquiry/templates/variable.php:28
+msgid "Choose an option"
+msgstr ""
+
+#: woocommerce-catalog-enquiry/templates/variable.php:72
+msgid "This product is currently out of stock and unavailable."
 msgstr ""
 
 #: woocommerce-catalog-enquiry/includes/wc-Woocommerce-Catalog-Enquiry-core-functions.php:18

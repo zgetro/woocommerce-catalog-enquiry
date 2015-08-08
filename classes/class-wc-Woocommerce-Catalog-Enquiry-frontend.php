@@ -148,27 +148,27 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 		$exclusion = $WC_Woocommerce_Catalog_Enquiry->options_exclusion;
 		
 		
-		if($settings['is_enable'] == "Enable" && ($this->available_for == '' ||  $this->available_for == 0)) {			
+		if(isset($settings['is_enable']) && $settings['is_enable'] == "Enable" && ($this->available_for == '' ||  $this->available_for == 0)) {			
 			add_action('init',array($this,'remove_add_to_cart_button'));
-			if($settings['is_enable_enquiry'] == "Enable" ) {
+			if(isset($settings['is_enable_enquiry']) && $settings['is_enable_enquiry'] == "Enable" ) {
 					add_action('woocommerce_single_product_summary', array($this,'add_form_for_enquiry'),100);				
 			}						
-			if($settings['is_remove_price'] == "Enable") {
+			if(isset($settings['is_remove_price']) && $settings['is_remove_price'] == "Enable") {
 				add_action('init',array($this,'remove_price_from_product_list_loop'),10);
 				add_action('woocommerce_single_product_summary',array($this,'remove_price_from_product_list_single'),5);				
 			}
 			if(isset($settings['is_custom_button']) && $settings['is_custom_button'] == "Enable") {
-				if($settings['button_type'] == 0 || $settings['button_type'] == '' || $settings['button_type'] == 1) {
+				if((isset($settings['button_type'])) && ($settings['button_type'] == 0 || $settings['button_type'] == '' || $settings['button_type'] == 1)) {
 					add_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );	
 					add_filter('woocommerce_loop_add_to_cart_link', array($this,'add_read_more_button'),10);					
 				}
-				else if($settings['button_type'] == 2) {
+				else if(isset($settings['button_type']) && $settings['button_type'] == 2) {
 					add_filter('woocommerce_loop_add_to_cart_link', array($this,'add_external_link_button'),10);				
 				}
-				else if($settings['button_type'] == 3) {
+				else if(isset($settings['button_type']) &&  $settings['button_type'] == 3) {
 					add_filter('woocommerce_loop_add_to_cart_link', array($this,'add_external_link_button_independent'),10);					
 				}
-				else if($settings['button_type'] == 4) {
+				else if(isset($settings['button_type']) && $settings['button_type'] == 4) {
 					add_filter('woocommerce_loop_add_to_cart_link', array($this,'add_custom_button_without_link'),10);					
 				}
 			}
@@ -258,13 +258,14 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 		if($product_for == $post->ID ||  $category_for == $post->ID) {			
 			remove_action('woocommerce_single_product_summary', array($this,'add_form_for_enquiry'),100);
 			add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );			
-			add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );		
+			add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+			remove_action( 'woocommerce_single_product_summary', array($this,'add_variation_product'),29 );
 		}
 	}
 	
 	
 	public function add_form_for_enquiry() {		
-		global $WC_Woocommerce_Catalog_Enquiry, $woocommerce, $post;
+		global $WC_Woocommerce_Catalog_Enquiry, $woocommerce, $post, $product;
 		$settings = $WC_Woocommerce_Catalog_Enquiry->options;
 		$settings_buttons = $WC_Woocommerce_Catalog_Enquiry->option_button;
 		if(isset($settings_buttons)) {
@@ -332,10 +333,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 		$productid = $post->ID;
 		$current_user = wp_get_current_user();
 		$product_name = get_post_field('post_title',$productid);
-		$product_url = get_permalink($productid);
-		
-		
-		
+		$product_url = get_permalink($productid);		
 		$arr = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9');
 		$i = 0;
 		$captcha = '';
@@ -396,6 +394,7 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 			function submitthis(str) {
 				var name = document.getElementById('woo_user_name').value;				
 				var email = document.getElementById('woo_user_email').value;
+				var enquiry_product_type = document.getElementById('enquiry_product_type').value;
 				var subject = '';
 				var phone = '';
 				var address = '';
@@ -414,7 +413,8 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 					comment = document.getElementById('woo_user_comment').value;					
 				}									
 				var product_name = document.getElementById('product_name_for_enquiry').value;				
-				var product_url = document.getElementById('product_url_for_enquiry').value;				
+				var product_url = document.getElementById('product_url_for_enquiry').value;
+				var product_id = document.getElementById('product_id_for_enquiry').value;				
 				var captcha = document.getElementById('woo_catalog_captcha');				
 				
 				if(name == '' || name == ' ') {
@@ -453,7 +453,10 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 										 'woo_customer_address': address,
 										 'woo_customer_comment': comment,
 										 'woo_customer_product_name': product_name,
-										 'woo_customer_product_url': product_url										 
+										 'woo_customer_product_url': product_url,
+										 'woo_customer_product_id' : product_id,
+										 'enquiry_product_type' : enquiry_product_type
+										 
 				};
 				jQuery.post(ajax_url, data, function(response) {  
 						
@@ -499,6 +502,8 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 		
 		<input type="hidden" name="product_name_for_enquiry" id="product_name_for_enquiry" value="<?php echo get_post_field('post_title',$post->ID); ?>" />
 		<input type="hidden" name="product_url_for_enquiry" id="product_url_for_enquiry" value="<?php echo get_permalink($post->ID); ?>" />
+		<input type="hidden" name="product_id_for_enquiry" id="product_id_for_enquiry" value="<?php echo $post->ID; ?>" />
+		<input type="hidden" name="enquiry_product_type" id="enquiry_product_type" value="<?php if( $product->is_type( 'variable' ) ) { echo "variable"; } ?>" />
 		<div id="responsive"  class="modal hide fade" tabindex="-1" data-width="760">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -609,38 +614,41 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 					}
 				}						
 			} 					
-		}
 		
-		$category_for = '';
-		if(isset( $exclusion['is_exclusion'] ) && $exclusion['is_exclusion'] == 'Enable' ) {
-			if( isset( $exclusion['mycategory_list'] ) ) {
-				if(is_array($exclusion['mycategory_list'])) {					
-					if(isset($product)) {
-						$term_list = wp_get_post_terms($post->ID,'product_cat',array('fields'=>'ids'));
-						
-						if(count(array_intersect($term_list, $exclusion['mycategory_list'])) > 0) {
-							$category_for = $post->ID;
+		
+			$category_for = '';
+			if(isset( $exclusion['is_exclusion'] ) && $exclusion['is_exclusion'] == 'Enable' ) {
+				if( isset( $exclusion['mycategory_list'] ) ) {
+					if(is_array($exclusion['mycategory_list'])) {					
+						if(isset($product)) {
+							$term_list = wp_get_post_terms($post->ID,'product_cat',array('fields'=>'ids'));
 							
+							if(count(array_intersect($term_list, $exclusion['mycategory_list'])) > 0) {
+								$category_for = $post->ID;
+								
+							}
+							else {
+								$category_for = '';
+							}
 						}
-						else {
-							$category_for = '';
-						}
-					}
-					else {  $category_for = ''; }										
+						else {  $category_for = ''; }										
+					} 
+					else { $category_for = ''; }				
 				} 
-				else { $category_for = ''; }				
+				else { $category_for = ''; }			
 			} 
-			else { $category_for = ''; }			
-		} 
-		else { $category_for = ''; }
+			else { $category_for = ''; }
 		
 		
 		
-		if($product_for == $post->ID || $category_for == $post->ID) {
-			add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );			
-		} else {
-			remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
-			
+			if($product_for == $post->ID || $category_for == $post->ID) {
+				add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );			
+			} else {
+				if(isset($settings['is_remove_price']) && $settings['is_remove_price'] == "Enable") {				
+				  remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+				}
+				
+			}
 		}
 	}
 	
@@ -802,8 +810,54 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 		}		
 			
 		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+		add_action( 'woocommerce_single_product_summary', array($this,'add_variation_product'),29);
 		
-	}	
+	}
+
+
+	public function add_variation_product() {
+		
+		global $WC_Woocommerce_Catalog_Enquiry, $post, $product;		
+		if( $product->is_type( 'variable' ) ){
+			$variable_product = new WC_Product_Variable($product);
+			$available_variations = $variable_product->get_available_variations();		
+			//attributes
+			include_once ($WC_Woocommerce_Catalog_Enquiry->plugin_path.'templates/variable.php');
+			
+			add_action('wp_footer', array($this, 'add_variation_js'),900);		
+			
+			echo "variable product";
+		}	
+	}
+	
+	public function add_variation_js() {?>
+		
+		<script type="text/javascript">
+		jQuery(document).ready(function($){
+			$(".variations select").change(function(e){
+			var variation_name = $(this).parent().parent().find(".label label").html();
+			var select_value = $(this).val();
+			var product_id = $(this).attr("data-product-id");			
+			var ajax_url = '<?php echo admin_url( 'admin-ajax.php' ) ?>';				
+				var data = {
+										 'action': 'add_variation_for_enquiry_mail',
+										 'variation_name': variation_name,
+										 'variation_value': select_value,
+										 'product_id': product_id
+										 									 
+				};
+				jQuery.post(ajax_url, data, function(response) { 
+						console.log("Response "+ response);
+						
+				});							
+			});	
+		});
+		
+		
+		</script>	
+	<?php	
+		
+	}
 	
 	public function remove_price_from_product_list_loop(){				
 		remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );		
