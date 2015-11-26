@@ -1,10 +1,10 @@
 <?php
-/*
+/**
 Plugin Name: Woocommerce Catalog Enquiry
 Plugin URI: http://dualcube.com
 Description: Convert your WooCommerce store into a catalog website in a click
 Author: Prabhakar Kumar Shaw, Dualcube 
-Version: 2.2.0
+Version: 2.3.0
 Author URI: http://dualcube.com
 */
 if(!isset($_SESSION)) {
@@ -20,7 +20,6 @@ if(!defined('WC_WOOCOMMERCE_CATALOG_ENQUIRY_TEXT_DOMAIN')) exit;
 if(!WC_Dependencies_woocommerce_catalog_enquiry::woocommerce_active_check()) {
   add_action( 'admin_notices', 'woocommerce_catalog_enquiry_alert_notice' );
 }
-
 /**
 * Plugin page links
 */

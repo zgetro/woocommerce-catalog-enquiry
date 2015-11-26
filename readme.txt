@@ -4,8 +4,8 @@ Tags: woocommerce, catalog, woocommerce catalog, woocommerce catalog enquiry, wo
 
 Donate link: http://dualcube.com/
 Requires at least: 3.8.1
-Tested up to: 4.2
-Stable tag: 2.2.0
+Tested up to: 4.3.1
+Stable tag: 2.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,8 @@ Following is a non comprehensive list of features:
 * Restricted stores features.
 * Enable/disable the exclusion rules in a click.
 * Enquiry button can be customized completely from plugin settings.
+* New captcha enable/disable settings added.
+* New settings section introduce Form Fields Label settings. where admin can put his/her own custom label for enquiry form fields.
 
 
 We are adding new features as you are reading. So If your required feature is currently not available in this plugin, feel free to put up a request in the support forum for this plugin or revisit the page after a few weeks. 
@@ -105,8 +107,25 @@ Ans. Yes, you can use this plugin for shop and catalog at a time like you can re
 19. WooCommerce Catalog Enquiry frontend shop view for selected uses.
 20. WooCommerce Catalog Enquiry frontend product details page view for variation product.
 21. WooCommerce Catalog Enquiry frontend product details page view for variation product for mobile.
+22. Enquiry form label settings  section.
 
 == Changelog ==
+= 2.3.0 =
+* Feature - Simple and variable product sku is added in enquiry email.
+* Feature - Default attributes selection of variable products.
+* Feature - Settings option added for override admin email with other email.
+* Feature - Settings option added for override the form headings with custom headings.
+* Feature - Settings option added for remove enquiry popup with same page enquiry form.
+* Feature - Settings option added for redirect the page after enquiry.
+* Fix - Variable word removed from the variable products details page.
+* Fix - Email validation added in equiry form.
+* Fix - Many small css fixing.
+
+= 2.2.1 =
+* Removed manadatory field from disable/enable settings (Name and Email). 
+* New captcha enable/disable settings added.
+* New settings section introduce Form Fields Label settings. where admin can put his/her own custom label for enquiry form fields.
+
 = 2.2.0 =
 * Fix - Some notice message is fixed in this version.
 * Feature - "Variation product" support added in this version.
@@ -137,6 +156,25 @@ Ans. Yes, you can use this plugin for shop and catalog at a time like you can re
 * Initial version release.
 
 == Upgrade Notice ==
+= 2.3.0 =
+* Feature - Simple and variable product SKU is added in enquiry email.
+* Feature - Default attributes selection of variable products are added.
+* Feature - Settings option added to override admin email with other email.
+* Feature - Settings option added to override the form headings with custom headings.
+* Feature - Settings option added to remove enquiry popup with same page enquiry form.
+* Feature - Settings option added to redirect the page after enquiry.
+* Fix - Variable word removed from the variable products' details page.
+* Fix - Email validation added in equiry form.
+* Fix - Many small css fixing.
+
+= 2.3.0 =
+* variable product text removed from product single product.
+
+= 2.2.1 =
+* Removed manadatory field from disable/enable settings (Name and Email). 
+* New captcha enable/disable settings added.
+* New settings section introduce Form Fields Label settings. where admin can put his/her own custom label for enquiry form fields.
+
 = 2.2.0 =
 * Fix - Some notice message is fixed in this version.
 * Feature - "Variation product" support added in this version.

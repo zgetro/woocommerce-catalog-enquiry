@@ -87,4 +87,59 @@ jQuery(document).ready(function($) {
       $('body').trigger('remove_multi_input_block_clicked');
     });
   });
+  if($('#is_other_admin_mail').is(':checked')) {
+		var parrent_ele = $('#other_admin_mail').parent().parent();
+		parrent_ele.show();
+  }
+  else {
+  	var parrent_ele = $('#other_admin_mail').parent().parent();
+		parrent_ele.hide();
+  }
+  if($('#is_override_form_heading').is(':checked')) {
+		var parrent_ele = $('#custom_static_heading').parent().parent();
+		parrent_ele.show();
+  }
+  else {
+  	var parrent_ele = $('#custom_static_heading').parent().parent();
+		parrent_ele.hide();
+  }
+  if($('#is_page_redirect').is(':checked')) {
+		var parrent_ele = $('#redirect_page_id').parent().parent();
+		parrent_ele.show();
+  }
+  else {
+  	var parrent_ele = $('#redirect_page_id').parent().parent();
+		parrent_ele.hide();
+  }
+  
+	$('#is_other_admin_mail').change(function() {
+			if($(this).is(":checked")) {
+				var parrent_ele = $('#other_admin_mail').parent().parent();
+				parrent_ele.show('slow');
+			}
+			else {
+				var parrent_ele = $('#other_admin_mail').parent().parent();
+				parrent_ele.hide('slow');
+			}
+	});
+	$('#is_override_form_heading').change(function() {
+			if($(this).is(":checked")) {
+				var parrent_ele = $('#custom_static_heading').parent().parent();
+				parrent_ele.show('slow');
+			}
+			else {
+				var parrent_ele = $('#custom_static_heading').parent().parent();
+				parrent_ele.hide('slow');
+			}
+	});
+	$('#is_page_redirect').change(function() {
+			if($(this).is(":checked")) {
+				var parrent_ele = $('#redirect_page_id').parent().parent();
+				parrent_ele.show('slow');
+			}
+			else {
+				var parrent_ele = $('#redirect_page_id').parent().parent();
+				parrent_ele.hide('slow');
+			}
+	});
 });

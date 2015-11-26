@@ -14,6 +14,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product, $post;
 $variation_attributes = $product->get_variation_attributes();
 $attributes   = $product->get_attributes();
+$default_arrt_value = get_post_meta( $post->ID, '_default_attributes', true);
+$i = 0;
+$variation_list = $_SESSION['variation_list'];
+if(isset($default_arrt_value) && is_array($default_arrt_value) && (!empty($default_arrt_value))) {
+	foreach($default_arrt_value as  $key => $value) {			
+		$vname = str_replace('pa_','',$key);
+		$vname2 = str_replace('attribute_pa_', '', $vname);
+		$vname2 = str_replace('attribute_','',$vname2);				
+		$arr = array('variation_name' => $vname2, 'variation_value' => $value, 'product_id' => $post->ID, 'variation_real_name' => 'attribute_'.$key);				
+		$variation_list[$i] = $arr;
+		$i++;
+	}	
+	$_SESSION['variation_list'] = $variation_list;	
+}
 ?>
 <?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
@@ -21,14 +35,13 @@ $attributes   = $product->get_attributes();
 	<?php if ( ! empty( $available_variations ) ) : ?>
 		<table class="variations" cellspacing="0">
 			<tbody>
-				<?php $loop = 0; foreach ( $variation_attributes as $name => $options ) : $loop++; ?>
+				<?php $loop = 0; foreach ( $variation_attributes as $name => $options ) : $loop++;  ?>
 					<tr>
 						<td class="label"><label for="<?php echo sanitize_title( $name ); ?>"><?php echo wc_attribute_label( $name ); ?></label></td>
 						<td class="value"><select id="<?php echo esc_attr( sanitize_title( $name ) ); ?>" data-product-id = "<?php echo $post->ID; ?>" name="attribute_<?php echo sanitize_title( $name ); ?>" data-attribute_name="attribute_<?php echo sanitize_title( $name ); ?>">
 							<option value=""><?php echo __( 'Choose an option', 'woocommerce' ) ?>&hellip;</option>
 							<?php
 								if ( is_array( $options ) ) {
-
 									if ( isset( $_REQUEST[ 'attribute_' . sanitize_title( $name ) ] ) ) {
 										$selected_value = $_REQUEST[ 'attribute_' . sanitize_title( $name ) ];
 									} elseif ( isset( $selected_attributes[ sanitize_title( $name ) ] ) ) {
@@ -36,7 +49,6 @@ $attributes   = $product->get_attributes();
 									} else {
 										$selected_value = '';
 									}
-
 									// Get terms if this is a taxonomy - ordered
 									if ( taxonomy_exists( $name ) ) {
 
@@ -46,13 +58,24 @@ $attributes   = $product->get_attributes();
 											if ( ! in_array( $term->slug, $options ) ) {
 												continue;
 											}
-											echo '<option value="' . esc_attr( $term->slug ) . '" ' . selected( sanitize_title( $selected_value ), sanitize_title( $term->slug ), false ) . '>' . apply_filters( 'woocommerce_variation_option_name', $term->name ) . '</option>';
+											$is_selected = '';
+											if(is_array($default_arrt_value) && (!empty($default_arrt_value))) {
+												if($default_arrt_value[$name] == $term->slug ) {
+													$is_selected = 'selected="selected"';
+												}
+											}
+											echo '<option value="' . esc_attr( $term->slug ) . '" ' . $is_selected . '>' . apply_filters( 'woocommerce_variation_option_name', $term->name ) . '</option>';
 										}
-
 									} else {
 
 										foreach ( $options as $option ) {
-											echo '<option value="' . esc_attr( sanitize_title( $option ) ) . '" ' . selected( sanitize_title( $selected_value ), sanitize_title( $option ), false ) . '>' . esc_html( apply_filters( 'woocommerce_variation_option_name', $option ) ) . '</option>';
+											$is_selected = '';
+											if(is_array($default_arrt_value) && (!empty($default_arrt_value))) {
+												if($default_arrt_value[$name] == esc_attr( sanitize_title( $option ) ) ) {
+													$is_selected = 'selected="selected"';
+												}
+											}
+											echo '<option value="' . esc_attr( sanitize_title( $option ) ) . '" ' . $is_selected . '>' . esc_html( apply_filters( 'woocommerce_variation_option_name', $option ) ) . '</option>';
 										}
 
 									}

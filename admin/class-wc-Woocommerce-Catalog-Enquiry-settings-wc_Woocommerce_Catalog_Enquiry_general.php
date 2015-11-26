@@ -8,6 +8,8 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Gneral {
   private $tab;
   
   public $all_users;
+  
+  public $page_array = array();
 
   /**
    * Start up
@@ -16,16 +18,23 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Gneral {
     $this->tab = $tab;
     $users = get_users();
     $this->all_users = array();
+    $this->get_all_pages();
     foreach($users as $user) {					
 			$this->all_users[$user->data->ID] = $user->data->display_name;	 			
 		}
     $this->options = get_option( "dc_{$this->tab}_settings_name" );
-    $this->settings_page_init();
-    
-    
-		
-	
-		
+    $this->settings_page_init();	
+  }
+  
+  public function get_all_pages() {
+  	global $WC_Woocommerce_Catalog_Enquiry;
+  	$args = array( 'posts_per_page' => -1, 'post_type' => 'page', 'orderby' => 'title', 'order' => 'ASC' );
+		$myposts = get_posts( $args );
+		foreach ( $myposts as $post ) : setup_postdata( $post ); 	
+		$this->page_array[$post->ID] = $post->post_title;		
+		endforeach; 
+		wp_reset_postdata();
+  	
   }
   
   /**
@@ -44,6 +53,9 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Gneral {
                                                                                                            "top_content_form" => array('title' => __('Enquiry Top content', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'wpeditor', 'id' => 'top_content_form', 'label_for' => 'top_content_form', 'desc' => __('Put your content if you want to top of enquiry form', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'name' => 'top_content_form'), //Top Content
                                                                                                            "bottom_content_form" => array('title' => __('Enquiry Bottom content', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'wpeditor', 'id' => 'bottom_content_form', 'label_for' => 'bottom_content_form', 'desc' => __('Put your content if you want to bottom of enquiry form', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'name' => 'bottom_content_form'), //Bottom Content
                                                                                                            "is_enable_enquiry" => array('title' => __('Product Enquiry Enable?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_enable_enquiry', 'label_for' => 'is_enable_enquiry', 'name' => 'is_enable_enquiry', 'desc' => __('Just Checked this checkbox for product page enquiry form enable', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this for active the form functionality.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'), // is catalog enable
+                                                                                                           "is_disable_popup" => array('title' => __('Enquiry Popup Disable?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_disable_popup', 'label_for' => 'is_disable_popup', 'name' => 'is_disable_popup', 'desc' => __('Just Checked this checkbox if you want to enquiry form in the same page below the short description', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this for deactive the popup.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'), // is catalog enable
+                                                                                                           "is_override_form_heading" => array('title' => __('Override Form Heading?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_override_form_heading', 'label_for' => 'is_override_form_heading', 'name' => 'is_override_form_heading', 'desc' => __('Just Checked this checkbox if you want to override dynamic heading with your static heading', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this for override dynamic heading.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'), // is catalog enable
+                                                                                                           "custom_static_heading" => array('title' => __('Custom Form Heading', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'text', 'id' => 'custom_static_heading', 'name' => 'custom_static_heading', 'hints' => __('Please Enter your custom Heading insteed of dynamic form heading', $WC_Woocommerce_Catalog_Enquiry->text_domain)),
                                                                                                            "is_remove_price" => array('title' => __('Remove Price?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_remove_price', 'label_for' => 'is_remove_price', 'name' => 'is_remove_price', 'desc' => __('Just Checked this checkbox for remove the price from catalog', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this for remove the price from product list.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'), // is catalog enable
                                                                                                            "custom_css_product_page" => array('title' => __('Custom CSS', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'textarea', 'label_for' => 'custom_css_product_page', 'name' => 'custom_css_product_page', 'desc' => __('Put your custom css in this box for product page there is no need to put the style Tag', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'rows' => 10, 'cols' => 120),
                                                                                                            "is_custom_button" => array('title' => __('Want a custom Button?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_custom_button', 'label_for' => 'is_custom_button', 'name' => 'is_custom_button', 'desc' => __('Do you want a custom Button at the Place of add to cart button then checked here', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this if you want custom button at the place of add to cart.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'), // is button enable
@@ -74,8 +86,7 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Gneral {
                                                                                                           )
                                                                                          ),
                                                       "enquiry_settings_section_form" => array("title" => "Enquiry Form Settings", // Another section
-                                                      																					"fields" => array("is_name" => array('title' => __('Name Field Enable ?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'checked'=>'checked',  'id' => 'is_name', 'label_for' => 'is_name', 'name' => 'is_name', 'desc' => __('Name must be enable in the form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Name field must be enabled in the enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'), // is button enable
-                                                      																														"is_email" => array('title' => __('Email Field Enable ?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'checked'=>'checked', 'id' => 'is_email', 'label_for' => 'is_email', 'name' => 'is_email', 'desc' => __('Email must be enable in the form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Email field must be enabled in the enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'),
+                                                      																					"fields" => array("is_captcha" => array('title' => __('Captcha Enable ?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_captcha', 'label_for' => 'is_captcha', 'name' => 'is_captcha', 'desc' => __('Do you want Captcha in for enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this if you want captcha in the enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'),
                                                       																														"is_subject" => array('title' => __('Subject Field Enable ?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_subject', 'label_for' => 'is_subject', 'name' => 'is_subject', 'desc' => __('Do you want Subject field in for enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this if you want subject field in the enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'),
                                                       																														"is_phone" => array('title' => __('Phone Field Enable ?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_phone', 'label_for' => 'is_phone', 'name' => 'is_phone', 'desc' => __('Do you want Phone field in for enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this if you want to Phone field in the enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'),
                                                       																														"is_address" => array('title' => __('Address Field Enable ?', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_address', 'label_for' => 'is_address', 'name' => 'is_address', 'desc' => __('Do you want Address field in for enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this if you want address field in the enquiry form.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'),
@@ -83,6 +94,24 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Gneral {
                                                       																														"other_emails" => array('title' => __('Other Emails (commma seperated)', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'text', 'id' => 'other_emails', 'label_for' => 'other_emails', 'name' => 'other_emails', 'desc' => __('Enter email address if you want to receive enquiry mail along with admin mail.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('if you add more than one email then you have to put comma seperated email id no space please.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => '')
                                                       																														
                                                       																						
+                                                      																					)),
+                                                      "enquiry_settings_section_form_label" => array("title" => "Enquiry Form Label Settings", // Another section
+                                                      																					"fields" => array("name_label" => array('title' => __('Custom label for name', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'text',   'id' => 'name_label', 'label_for' => 'name_label', 'name' => 'name_label', 'desc' => __('Given label will shown in the frontend form field in the place of Name.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Enter custom label for Name.', $WC_Woocommerce_Catalog_Enquiry->text_domain)), // is button enable
+                                                      																														"email_label" => array('title' => __('Custom label for email', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'text',  'id' => 'email_label', 'label_for' => 'email_label', 'name' => 'email_label', 'desc' => __('Given label will shown in the frontend form field in the place of Email.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Enter custom label for Email.', $WC_Woocommerce_Catalog_Enquiry->text_domain)),
+                                                      																														"subject_label" => array('title' => __('Custom label for subject', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'text', 'id' => 'subject_label', 'label_for' => 'subject_label', 'name' => 'subject_label', 'desc' => __('Given label will shown in the frontend form field in the place of Subject.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Enter custom label for Subject.', $WC_Woocommerce_Catalog_Enquiry->text_domain)),
+                                                      																														"phone_label" => array('title' => __('Custom label for phone', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'text', 'id' => 'phone_label', 'label_for' => 'phone_label', 'name' => 'phone_label', 'desc' => __('Given label will shown in the frontend form field in the place of Phone.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Enter custom label for Phone.', $WC_Woocommerce_Catalog_Enquiry->text_domain)),
+                                                      																														"address_label" => array('title' => __('Custom label for address', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'text', 'id' => 'address_label', 'label_for' => 'address_label', 'name' => 'address_label', 'desc' => __('Given label will shown in the frontend form field in the place of Address.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Enter custom label for Phone.', $WC_Woocommerce_Catalog_Enquiry->text_domain)),
+                                                      																														"comment_label" => array('title' => __('Custom label for comment', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'text', 'id' => 'comment_label', 'label_for' => 'comment_label', 'name' => 'comment_label', 'desc' => __('Given label will shown in the frontend form field in the place of Comment.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Enter custom label for Comment.', $WC_Woocommerce_Catalog_Enquiry->text_domain)),
+                                                      																														"captcha_label" => array('title' => __('Custom label for captcha', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'text', 'id' => 'captcha_label', 'label_for' => 'captcha_label', 'name' => 'captcha_label', 'desc' => __('Given label will shown in the frontend form field in the place of Captcha.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Enter custom label for Captcha.', $WC_Woocommerce_Catalog_Enquiry->text_domain)),
+                                                      																														"captcha_input_label" => array('title' => __('Custom label for captcha Input', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'text', 'id' => 'captcha_input_label', 'label_for' => 'captcha_input_label', 'name' => 'captcha_input_label', 'desc' => __('Given label will shown in the frontend form field in the place of Captcha Input.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Enter custom label for Captcha.', $WC_Woocommerce_Catalog_Enquiry->text_domain))   																													
+                                                      																					)),
+                                                      "enquiry_settings_section_override" => array("title" => "Enquiry Mail Override", // Another section
+                                                      																					"fields" => array("is_other_admin_mail" => array('title' => __('Remove admin email', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_other_admin_mail', 'label_for' => 'is_other_admin_mail', 'name' => 'is_other_admin_mail', 'desc' => __('Do you want remove admin email from reciever list.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this if you want to remove admin email from reciever list.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'),                                                      																														
+                                                      																														"other_admin_mail" => array('title' => __('Enter mail id who get the email', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'text', 'id' => 'other_admin_mail', 'label_for' => 'other_admin_mail', 'name' => 'other_admin_mail', 'desc' => __('Enter mail id who get the email insteed of admin.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Enter mail id who get the email insteed of admin.', $WC_Woocommerce_Catalog_Enquiry->text_domain))
+                                                      																					)),
+                                                      "enquiry_settings_section_redirected" => array("title" => "Redirect after enquiry success", // Another section
+                                                      																					"fields" => array("is_page_redirect" => array('title' => __('Redirect to other page', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'checkbox', 'id' => 'is_page_redirect', 'label_for' => 'is_page_redirect', 'name' => 'is_page_redirect', 'desc' => __('Do you want to redirect to other page after enquiry successful.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Check this if you want to redirect to other page after successful enquiry.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'value' => 'Enable'),                                                      																														
+                                                      																														"redirect_page_id" => array('title' => __('Select Redirect page', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'type' => 'select', 'id' => 'redirect_page_id', 'label_for' => 'redirect_page_id', 'options' => $this->page_array, 'name' => 'redirect_page_id', 'desc' => __('Select page where will be redirected after enquiry successful.', $WC_Woocommerce_Catalog_Enquiry->text_domain), 'hints' => __('Select Redirection page.', $WC_Woocommerce_Catalog_Enquiry->text_domain))
                                                       																					))
                                                       )
                                   );
@@ -101,6 +130,38 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Gneral {
    
     
     $hasError = false;
+    
+    if( isset( $input['is_page_redirect'] ) )
+		$new_input['is_page_redirect'] = sanitize_text_field( $input['is_page_redirect'] );
+		if( isset( $input['redirect_page_id'] ) )
+		$new_input['redirect_page_id'] = sanitize_text_field( $input['redirect_page_id'] );
+    
+		if( isset( $input['is_override_form_heading'] ) )
+		$new_input['is_override_form_heading'] = sanitize_text_field( $input['is_override_form_heading'] );
+		if( isset( $input['custom_static_heading'] ) )
+		$new_input['custom_static_heading'] = sanitize_text_field( $input['custom_static_heading'] );
+	
+    if( isset( $input['name_label'] ) )
+      $new_input['name_label'] = sanitize_text_field( $input['name_label'] );
+    if( isset( $input['email_label'] ) )
+      $new_input['email_label'] = sanitize_text_field( $input['email_label'] );
+    if( isset( $input['subject_label'] ) )
+      $new_input['subject_label'] = sanitize_text_field( $input['subject_label'] );
+    if( isset( $input['phone_label'] ) )
+      $new_input['phone_label'] = sanitize_text_field( $input['phone_label'] );
+    if( isset( $input['address_label'] ) )
+      $new_input['address_label'] = sanitize_text_field( $input['address_label'] );
+    if( isset( $input['comment_label'] ) )
+      $new_input['comment_label'] = sanitize_text_field( $input['comment_label'] );
+    if( isset( $input['captcha_label'] ) )
+      $new_input['captcha_label'] = sanitize_text_field( $input['captcha_label'] );
+    if( isset( $input['captcha_input_label'] ) )
+      $new_input['captcha_input_label'] = sanitize_text_field( $input['captcha_input_label'] );
+    if( isset( $input['is_disable_popup'] ) )
+      $new_input['is_disable_popup'] = sanitize_text_field( $input['is_disable_popup'] );
+    
+    if( isset( $input['is_captcha'] ) )
+      $new_input['is_captcha'] = sanitize_text_field( $input['is_captcha'] );
     
     if( isset( $input['is_enable'] ) )
       $new_input['is_enable'] = sanitize_text_field( $input['is_enable'] );
@@ -236,6 +297,10 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Gneral {
     if( isset( $input['is_hide_cart_checkout'] ) )
     	$new_input['is_hide_cart_checkout'] = sanitize_text_field( $input['is_hide_cart_checkout'] );
     
+		if( isset( $input['is_other_admin_mail'] ) )
+		$new_input['is_other_admin_mail'] = sanitize_text_field( $input['is_other_admin_mail'] );
+		if( isset( $input['other_admin_mail'] ) )
+		$new_input['other_admin_mail'] = sanitize_text_field( $input['other_admin_mail'] );    
     
     if(!$hasError) {
       add_settings_error(
@@ -271,6 +336,22 @@ class WC_Woocommerce_Catalog_Enquiry_Settings_Gneral {
   public function enquiry_settings_section_form_info() {
     global $WC_Woocommerce_Catalog_Enquiry;
     _e('Configure your enquiry form settings below', $WC_Woocommerce_Catalog_Enquiry->text_domain);
+  }
+  
+  public function enquiry_settings_section_override_info() {
+    global $WC_Woocommerce_Catalog_Enquiry;
+    _e('Override the email settings for enquiry email reciever', $WC_Woocommerce_Catalog_Enquiry->text_domain);
+  }
+  
+  public function enquiry_settings_section_redirected_info() {
+    global $WC_Woocommerce_Catalog_Enquiry;
+    _e('Redirect page settings.', $WC_Woocommerce_Catalog_Enquiry->text_domain);
+  }
+  
+  public function enquiry_settings_section_form_label_info() {
+  	global $WC_Woocommerce_Catalog_Enquiry;
+    _e('Configure your enquiry form Labels', $WC_Woocommerce_Catalog_Enquiry->text_domain);
+  	
   }
   
 }
