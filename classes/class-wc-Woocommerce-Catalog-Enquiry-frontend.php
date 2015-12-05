@@ -1191,15 +1191,21 @@ class WC_Woocommerce_Catalog_Enquiry_Frontend {
 
 	public function add_variation_product() {
 		
-		global $WC_Woocommerce_Catalog_Enquiry, $post, $product;		
+		global $WC_Woocommerce_Catalog_Enquiry, $post, $product;
+		// Enqueue variation scripts
+        	wp_enqueue_script( 'wc-add-to-cart-variation' );
 		if( $product->is_type( 'variable' ) ){
 			$variable_product = new WC_Product_Variable($product);
 			$available_variations = $variable_product->get_available_variations();		
 			//attributes
 			include_once ($WC_Woocommerce_Catalog_Enquiry->plugin_path.'templates/variable.php');
 			
-			add_action('wp_footer', array($this, 'add_variation_js'),900);		
-			
+			/**
+			 * Not Needed due to variation scripts is already avail for woocommerce need to just append
+			 * here 
+			 * please see line #1196
+			 * /
+			//add_action('wp_footer', array($this, 'add_variation_js'),900);		
 			
 		}	
 	}
