@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product, $post;
 $variation_attributes = $product->get_variation_attributes();
 $attributes   = $product->get_attributes();
+$attribute_keys = array_keys($attributes);
 $default_arrt_value = get_post_meta( $post->ID, '_default_attributes', true);
 $i = 0;
 $variation_list = $_SESSION['variation_list'];
@@ -82,12 +83,16 @@ if(isset($default_arrt_value) && is_array($default_arrt_value) && (!empty($defau
 								}
 							?>
 						</select><div class="<?php echo esc_attr( sanitize_title( $name ) ); ?>" style="color:#f00;" ></div> </td>
+						<?php echo end($attribute_keys) === $name ? '<a class="reset_variations" href="#">Clear selection</a>' : ''; ?>
 					</tr>
 		        <?php endforeach;?>
 			</tbody>
 		</table>
 
 		<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
+		 <div class="single_variation_wrap" style="display:none;">
+            		<?php do_action('woocommerce_single_variation'); ?>
+        	</div>
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 
 	<?php else : ?>
